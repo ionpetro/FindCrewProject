@@ -16,6 +16,16 @@
     <!-- Custom styles for this template -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
 
+    <!-- Custom style for main html -->
+    <link href="vendor/bootstrap/css/main_css.css" rel="stylesheet">
+
+    <!-- Font-Awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/button.css">
+
+    
+
   </head>
 
   <body id="page-top">
@@ -37,6 +47,9 @@
               <a class="nav-link js-scroll-trigger" href="#services">Services</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
             </li>
             <li class="nav-item">
@@ -46,38 +59,46 @@
         </div>
       </div>
     </nav>
-    <header class="bg-primary text-white">
+
+    <header class="header-back text-white">
       <div class="container text-center">
         
           <p>
             <div class="container text-center">
-            <h4>.</h4>
-            <h3 class="bg-primary text-white" class="container text-center">Βρες το πλήρωμά σου!</h3>
+            <p></p>
+            <h2 class="text-white" class="container text-center">FIND YOUR CREW</h2>
           </div>
           </p>
-          <label><h4>Ειδικότητα:</h4></label>
-          <select>
-
-            <option value="none">Επιλέξτε</option></label>
-            <option value="captain">Καπετάνιος</option>
-            <option value="navy">Ναύτης</option>
-            <option value="cleaner">Καθαριστής</option>
-            <option vlaue="cooker">Μάγειρας</option>
-          </select>
-      
-        <label><h4>Χώρα:</h4></label>
-        <select>
-          <option value="none">Επιλέξτε</option>
-          <option value="greece">Ελλάδα</option>
-          <option value="italy">Ιταλία</option>
-          <option value="spain">Ισπανία</option>
-          <option value="portugal">Πορτογαλία</option>
-          <option value="turkey">Τουρκία</option>
-        </select>
+          
+          <form>
+            <div class="row">
+              <div class="container col-sm-7"> 
+                <select class="form-control form-control-sm text-center">
+                  <label><option value="none">Proffesion</option></label>
+                  <option value="captain">Καπετάνιος</option>
+                  <option value="navy">Ναύτης</option>
+                  <option value="cleaner">Καθαριστής</option>
+                  <option vlaue="cooker">Μάγειρας</option>
+                </select>
+              </div>
+              <p><br></p>
+              <div class="container col-sm-7">
+                <select class="form-control form-control-sm text-center">
+                  <label><option value="none">Country</option></label>
+                  <option value="greece">Ελλάδα</option>
+                  <option value="italy">Ιταλία</option>
+                  <option value="spain">Ισπανία</option>
+                  <option value="portugal">Πορτογαλία</option>
+                  <option value="turkey">Τουρκία</option>
+                </select>
+                <p></p>
+              </div>
+            </div>
+          </form>
               
-        &nbsp;
-        <div class="container text-center">
-        <button class="button">Βρες</button> 
+        
+        <div>
+          <button class="button" style="vertical-align:middle"><span>Search</span></button>
         </div>
       
       &nbsp;
@@ -106,47 +127,91 @@
       </div>
     </section>
 
-    <section id="about">
+    <section id="team">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div style="display: inline-block;">
-            <h2>Η ομάδα μας</h2>
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-              <style>
-                img {
-                  border-radius: 50%;
-                }
-              </style>
-           
-              <img src="27545296_1996435803931686_2338822951831833620_n.jpg" alt="Stickman" style="width:150px">
-                <p><h5>Μαριέττα Λαζανά</h5></p>
+            <div class="col-lg-8 mx-auto">
+                <h2>Our Team</h2>
+                &nbsp;
+                <p></p>
+    
+            <div class="inline-block">
+              <div class="col-md-4 col-sm-4">
+                <div class="team-member">
+                  <div class="team-img">
+                      <img src="27545296_1996435803931686_2338822951831833620_n.jpg" alt="team member" class="img-responsive">
+                  </div>
+                  <div class="team-hover">
+                    <div class="desk">
+                      <h4>Hi there!</h4>
+                      <p>I love to introduce myself as a hardcore Web Designer.</p>
+                    </div>
+                    <div class="s-link">                  
+                      <a href="https://www.facebook.com/people/Marietta-Lazana/100006958578763"><i class="fa fa-facebook"></i></a>
+                      <a href="https://github.com/mlazana"><i class="fa fa-github"></i></a>
+                      <a href="https://www.linkedin.com/in/marietta-lazana-1aa06a128/"><i class="fa fa-linkedin-square"></i></a>
+                    </div>
+                  </div>
               </div>
-               <div style="display: inline-block;">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-              <style>
-                img {
-                  border-radius: 50%;
-                }
-              </style>
-           
-              <img src="33599528_2045967135645219_8220196959319752704_n.jpg" alt="Stickman" style="width:150px">
-                <p><h5>Ίων Πετρόπουλος</h5></p>
+              <div class="team-title">
+                  <h5>Lazana Marietta</h5>
+                  <span>founder &amp; CEO </span>
               </div>
-              <div style="display: inline-block;">
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-              <style>
-                img {
-                  border-radius: 50%;
-                }
-              </style>
-           
-              <img src="44237956_1964240956996977_5646843724550897664_n.jpg" alt="Stickman" style="width:150px; height: 168px">
-                <p><h5>Μαρία Μπάρτζα</h5></p>
+            </div>
+          </div>
+             <div class="inline-block">
+              <div class="col-md-4 col-sm-4">
+                <div class="team-member">
+                  <div class="team-img">
+                      <img src="33599528_2045967135645219_8220-2.jpg" alt="team member" class="img-responsive">
+                  </div>
+                  <div class="team-hover">
+                    <div class="desk">
+                      <h4>Hi there!</h4>
+                      <p>I love to introduce myself as a hardcore Web Designer.</p>
+                    </div>
+                    <div class="s-link">                  
+                      <a href="https://www.facebook.com/iwn.petropoulos"><i class="fa fa-facebook"></i></a>
+                      <a href="https://github.com/ionpetro"><i class="fa fa-github"></i></a>
+                      <a href="https://www.linkedin.com/in/ion-petropoulos-081a34130"><i class="fa fa-linkedin-square"></i></a>
+                    </div>
+                  </div>
               </div>
+              <div class="team-title">
+                  <h5>Petropoulos Ion</h5>
+                  <span>founder &amp; CTO </span>
+              </div>
+            </div>
+          </div>
+          <div class="inline-block">
+            <div class="col-md-4 col-sm-4">
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="44237956_1964240956996977_5646843724550897664_n.jpg" alt="team member" class="img-responsive">
+                    </div>
+                    <div class="team-hover">
+                        <div class="desk">
+                            <h4>I love to design</h4>
+                            <p>I love to introduce myself as a hardcore Web Designer.</p>
+                        </div>
+                        <div class="s-link">
+                            <a href="https://www.facebook.com/maria.bartza"><i class="fa fa-facebook"></i></a>
+                            <a href="https://github.com/mariabartza"><i class="fa fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/mariabartza/"><i class="fa fa-linkedin-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-title">
+                    <h5>Bartza Maria</h5>
+                    <span>Marketing Manager </span>
+                </div>
+            </div>
+          </div>
           </div>
         </div>
+
       </div>
+      
     </section>
 
     <section id="contact" class="bg-light">

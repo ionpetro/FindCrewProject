@@ -6,13 +6,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Ionpe">
 
-    <title>Bare - Start Bootstrap Template</title>
+    <title>Login</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+
     <link href="vendor/bootstrap/css/kappa.css" rel="stylesheet">
+
+
 
 
 
@@ -21,27 +26,29 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="file:///C:/Users/ionpe/Documents/GitHub/FindCrewProject/main%20page/index.html">FindCrew</a>
+        <a class="navbar-brand js-scroll-trigger" href="file:///C:/Users/ionpe/Documents/GitHub/FindCrewProject/main%20page/index.html">FindCrew</a>
+        
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="file:///C:/Users/ionpe/Documents/GitHub/FindCrewProject/main%20page/index.html#about">About
-                <span class="sr-only">(current)</span>
-              </a>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="file:///C:/Users/ionpe/Documents/GitHub/FindCrewProject/main%20page/index.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="file:///C:/Users/ionpe/Documents/GitHub/FindCrewProject/main%20page/index.html#services">Services</a>
+              <a class="nav-link js-scroll-trigger" href="file:///C:/Users/ionpe/Documents/GitHub/FindCrewProject/main%20page/index.html">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="file:///C:/Users/ionpe/Documents/GitHub/FindCrewProject/main%20page/index.html#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="file:///C:/Users/ionpe/Documents/GitHub/FindCrewProject/main%20page/index.html">Team</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link js-scroll-trigger" href="file:///C:/Users/ionpe/Documents/GitHub/FindCrewProject/main%20page/index.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="file:///C:/Users/ionpe/Documents/GitHub/FindCrewProject/log%20in%20page/login.html#">Login</a>
             </li>
           </ul>
         </div>
@@ -49,72 +56,76 @@
     </nav>
 
     <!-- Page Content -->
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    &nbsp;
+    <p><br></p>
+    <p><br></p>
+    
     <div class="login-wrap">
       <div class="login-html">
-        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"><strong>Sign In</strong></label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"><strong>Sign Up</strong></label>
         <div class="login-form">
           <div class="sign-in-htm">
             <div class="group">
-              <label for="user" class="label">Username</label>
+              <label for="user" class="label"><strong>Username</strong></label>
               <input id="user" type="text" class="input">
             </div>
             <div class="group">
-              <label for="pass" class="label">Password</label>
+              <label for="pass" class="label"><strong>Password</strong></label>
               <input id="pass" type="password" class="input" data-type="password">
             </div>
             <div class="group">
               <input id="check" type="checkbox" class="check" checked>
-              <label for="check"><span class="icon"></span> Keep me Signed in</label>
+              <label for="check"><span class="icon"></span><strong> Keep me Signed in </strong></label>
             </div>
             <div class="group">
               <input type="submit" class="button" value="Sign In">
             </div>
             <div class="hr"></div>
-            <div class="foot-lnk">
-              <a href="#forgot">Forgot Password?</a>
-            </div>
           </div>
           <div class="sign-up-htm">
             <div class="group">
-              <label for="user" class="label">Username</label>
+              <label for="user" class="label"><strong>Username</strong></label>
               <input id="user" type="text" class="input">
             </div>
             <div class="group">
-              <label for="pass" class="label">Password</label>
+              <label for="pass" class="label"><strong>Password</strong></label>
               <input id="pass" type="password" class="input" data-type="password">
             </div>
             <div class="group">
-              <label for="pass" class="label">Repeat Password</label>
+              <label for="pass" class="label"><strong>Repeat Password</strong></label>
               <input id="pass" type="password" class="input" data-type="password">
             </div>
             <div class="group">
-              <label for="pass" class="label">Email Address</label>
+              <label for="pass" class="label"><strong>Email Address</strong></label>
               <input id="pass" type="text" class="input">
             </div>
             <div class="group">
               <input type="submit" class="button" value="Sign Up">
             </div>
             <div class="hr"></div>
-            <div class="foot-lnk">
-              <label for="tab-1">Already Member?</a>
-            </div>
           </div>
         </div>
       </div>
     </div>
 
-    
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark footer">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom JavaScript for this theme -->
+    <script src="js/scrolling-nav.js"></script>
 
   </body>
 
