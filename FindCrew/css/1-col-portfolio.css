@@ -31,3 +31,15 @@ body{padding-top:70px;}
 	padding: 20px;
 	background-color: #f9f9f9;
 }
+
+.btn {
+	background-color:#387B7A;
+	color:white;
+	border-color:white;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #5CAEAD;
+    border-color: white; /*set the color you want here*/
+}

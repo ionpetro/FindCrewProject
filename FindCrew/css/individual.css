@@ -7,9 +7,8 @@
 body {
   padding-top: 60px;
   margin-top: 120px;
-  background-color: #A4A4A4;
+  background-color: #D1D4D4;
 }
-
 @media (min-width: 992px) {
   body {
     padding-top: 56px;
@@ -23,7 +22,7 @@ body {
 }
 
 .ancestor2 .card{
-  background-color:#086A87;
+  background-color:#387B7A;
 
 
 }
@@ -32,7 +31,7 @@ body {
 
 .container .btn {
 
-  background-color:#086A87;
+  background-color:#387B7A;
   margin: 35px;
 
 }

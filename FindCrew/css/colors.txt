@@ -1,0 +1,2 @@
+main blue : #387B7A
+hover: #5CAEAD
