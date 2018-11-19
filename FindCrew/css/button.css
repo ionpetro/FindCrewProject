@@ -21,7 +21,7 @@
 }
 
 .button span:after {
-  content: '\26F4';
+  content:  '\2693';
   position: absolute;
   opacity: 0;
   top: 0;
