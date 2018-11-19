@@ -1,0 +1,31 @@
+
+body{
+	margin-top: 80px;
+	margin-right: 150px;
+	padding-left: 100px;
+	background-color:#D1D4D4;
+}
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color:  #598881;
+    border-color: #598881; /*set the color you want here*/
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #97C4BD;
+    border-color: #97C4BD; /*set the color you want here*/
+}
+
+
+.card{
+	border-color:#cee0de;
+
+}
+
+.card-header{
+	background-color: #cee0de;
+}
