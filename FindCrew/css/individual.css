@@ -1,12 +1,21 @@
 
-body{
-  margin-top: 80px;
-  margin-right: 150px;
-  padding-left: 100px;
-  background-color:#D1D4D4;
+body {
+  padding-top: 54px;
+  margin-top: 20px;
 }
 
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
 
+.pagination {
+  margin-bottom: 15px;
+}
+
+/*
+*/
 
 .btn-primary {
     color: #fff;
