@@ -20,7 +20,10 @@ h2 {
 
 .card{
   margin-bottom: 10px;
+  background-color: #F8FAFA;
 }
+
+
 
 .pagination {
   margin-bottom: 15px;
@@ -28,7 +31,7 @@ h2 {
 
 .btn-primary {
     color: #fff;
-    background-color:  #598881;
+    background-color: #598881;
     border-color: #598881; /*set the color you want here*/
     margin-top: 20px;
     margin-bottom: 20px;

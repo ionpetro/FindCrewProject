@@ -29,17 +29,21 @@ body{padding-top:70px;}
 
 #profil {
 	padding: 20px;
-	background-color: #f9f9f9;
+	background-color: #F8FAFA;
 }
 
 .btn {
-	background-color:#387B7A;
+	background-color:#598881;
+  border-color: #598881;
 	color:white;
-	border-color:white;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #5CAEAD;
+    background-color: #97C4BD;
     border-color: white; /*set the color you want here*/
+}
+
+.card-header{
+  background-color: #cee0de;
 }
