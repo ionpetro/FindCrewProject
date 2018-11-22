@@ -1,8 +1,7 @@
 
 body {
   padding-top: 54px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 @media (min-width: 992px) {
@@ -11,23 +10,30 @@ body {
   }
 }
 
-.pagination {
-  margin-bottom: 15px;
-}
+
 
 /*
 */
+h2 {
+  font-size: 35px;
+}
+
+.card{
+  margin-bottom: 10px;
+}
+
+.pagination {
+  margin-bottom: 15px;
+}
 
 .btn-primary {
     color: #fff;
     background-color:  #598881;
     border-color: #598881; /*set the color you want here*/
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-.custom {
-    width: 350px !important;
-}
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
     color: #fff;
