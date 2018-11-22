@@ -2,6 +2,7 @@
 body {
   padding-top: 54px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 @media (min-width: 992px) {
@@ -21,6 +22,11 @@ body {
     color: #fff;
     background-color:  #598881;
     border-color: #598881; /*set the color you want here*/
+    margin-top: 40px;
+}
+
+.custom {
+    width: 350px !important;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
