@@ -26,3 +26,9 @@ section {
 .ela {
   background-color: aqua;
 }
+
+.form-control:focus { 
+    outline: none !important;
+    border-color: white;
+    box-shadow: 0 0 10px #97C4BD;
+}
