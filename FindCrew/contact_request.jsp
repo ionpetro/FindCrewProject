@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,34 +47,38 @@
         </div>
       </div>
     </nav>
-
+ 
   <div class="card" style="width: 60rem;">
     <img class="card-img-top" src="images/background.jpg" alt="Card image cap" style="width: width:100px;height:350px;">
     <div class="card-body" >
       <h3 class="card-title">Contact Request</h3>
-      <div class="form-group">
-          <label for="usr">Name</label>
-          <input type="text" class="form-control" id="usr">
-      </div>
-      <div class="form-group">
-          <label for="usr">Surname</label>
-          <input type="text" class="form-control" id="usr">
-      </div>
-      <div class="form-group">
-          <label for="usr">Email</label>
-          <input type="text" class="form-control" id="usr">
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone</label>
-        <input type="text" class="form-control" id="pwd">
-      </div> 
-      <div class="form-group">
-            <label for="comment">Description</label>
-            <textarea class="form-control" rows="5" id="comment"></textarea>
-      </div> 
-     <div class="container col-md-6">
-     <button type="button" class="btn btn-primary btn-block">Send</button> 
-     </div>  
+
+      <form method="post" action="contact_request_controller.jsp">
+        <div class="form-group">
+            <label for="usr">Name</label>
+            <input type="text" class="form-control" id="usr">
+        </div>
+        <div class="form-group">
+            <label for="usr">Surname</label>
+            <input type="text" class="form-control" id="usr">
+        </div>
+        <div class="form-group">
+            <label for="usr">Email</label>
+            <input type="text" class="form-control" id="usr">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="text" class="form-control" id="pwd">
+        </div> 
+        <div class="form-group">
+              <label for="comment">Description</label>
+              <textarea class="form-control" rows="5" id="comment"></textarea>
+        </div> 
+       <div class="container col-md-6">
+       <button type="submit" class="btn btn-primary btn-block">Send</button> 
+       </div> 
+     </form> 
+
    </div>
   </div>
 
