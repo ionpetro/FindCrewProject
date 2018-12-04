@@ -1,17 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page errorPage="error_page.jsp"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
   <head>
 
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	    <meta name="description" content="">
-	    <meta name="author" content="">
-
-	    <title>FindCrew</title>
-
-	    <!-- Bootstrap core CSS -->
-	    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	    <%@ include file ="header.jsp" %>
 
 
 	    <!-- Custom style for main html -->
@@ -22,37 +17,8 @@
  </head>
 
  <body>
-
-	    <!-- Navigation -->
-	    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" >
-	      <div class="container">
-		        <a class="navbar-brand js-scroll-trigger" href="index.html"><img style="max-width:110px; margin-top: -4px;" src="images/l.png "></a>
-		        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-		          <span class="navbar-toggler-icon"></span>
-		        </button>
-		        <div class="collapse navbar-collapse" id="navbarResponsive">
-		          <ul class="navbar-nav ml-auto">
-		            <li class="nav-item dropdown">              
-		                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">About</a>
-		                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-		                  <a href="index.html#about" class="dropdown-item">About us</a>
-		                  <a href="index.html#services" class="dropdown-item">Services</a>
-		                  <a href="index.html#team" class="dropdown-item">Team</a>
-		                </div>
-		            </li>
-		            <li class="nav-item">
-		              <a class="nav-link" href="profiles.html">Crew</a>
-		            </li>
-		            <li class="nav-item">
-		              <a class="nav-link js-scroll-trigger" href="index.html#contact">Contact</a>
-		            </li>
-		            <li class="nav-item">
-		              <a class="nav-link js-scroll-trigger" href="login.html">Login</a>
-		            </li>
-		          </ul>
-		        </div>
-	      </div>
-	    </nav>
+         <!-- Here should be an "if" in order to see if the user has loged in or not -->
+	    <%@ include file = "navbar_before.jsp" %>
 
 	    <!-- Page Content -->
 
@@ -114,20 +80,7 @@
 	    </div>
 	   <!-- /.container -->
 
-	    <!-- Footer -->
-	    <footer class="py-5 bg-dark">
-			<div class="text-center text-white">
-				<h3><b>Contact us</b></h3>
-				Athens University of Economics & Business <br>
-				28th Oktovriou 76, Athens 104 34 <br>
-				P: 6979876987
-			</div>
-			<br>
-			<div class="container">
-				<p class="m-0 text-center text-white">Copyright &copy; FindCrew 2018</p>
-			</div>
-			<!-- /.container -->
-	    </footer>
+	    <%@ include file = "footer.jsp" %>
 
 	   
 
