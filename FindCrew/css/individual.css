@@ -47,9 +47,20 @@ h2 {
 
 .card{
   border-color:#cee0de;
+  margin-left: auto;
+  margin-right: auto;
+  margin: auto;
 
 }
 
 .card-header{
   background-color: #cee0de;
+}
+
+.horizontal-center {
+  margin: auto;
+}
+
+.center {
+  align-self: center;
 }
