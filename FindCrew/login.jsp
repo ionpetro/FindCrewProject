@@ -57,12 +57,12 @@
     </nav>
 
     <!-- Page Content -->
-    <p><br></p>
-    <p><br></p>
-
     <% if(request.getAttribute("message") != null) { %>   
       <div class="alert alert-danger text-center" role="alert"><%=(String)request.getAttribute("message") %></div>
     <% } %>
+
+    <p><br></p>
+    <p><br></p>
     
     <form method="post" action="loginController.jsp">
     <div class="login-wrap">
@@ -73,11 +73,11 @@
           <div class="sign-in-htm">
             <div class="group">
               <label for="user" class="label"><strong>Username</strong></label>
-              <input id="user" type="text" class="input" required>
+              <input id="user" type="text" name="username" class="input" required>
             </div>
             <div class="group">
               <label for="pass" class="label"><strong>Password</strong></label>
-              <input id="pass" type="password" class="input" data-type="password" required>
+              <input id="pass" type="password" name="password" class="input" data-type="password" required>
             </div>
             <div class="group">
               <input id="check" type="checkbox" class="check" checked>

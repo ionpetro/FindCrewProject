@@ -7,13 +7,9 @@
 //get parameter from request
 String username = request.getParameter("username");
 String password = request.getParameter("password");
-%>
 
-<%
 
 UserLoginDAO ud = new UserLoginDAO();
-UserLogin userlog = new UserLogin(username, password);
-
 
 try {
 	ud.authenticate(username, password);

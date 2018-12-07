@@ -24,34 +24,27 @@
 	    <form>
 			<div class="container">
 				<div class="horizontal-center">
-	    		   <div class=" col-lg-8 col-md-8">	
+	    		   <div class=" col-lg-12 col-md-12">	
 	    		   	<h2 style="color: #598881">Fill out the form and become a FindCrewer!</h2>  
 	    		   		<div class="card">
 			              <div class="card-header"><b>General Information</b></div>
-			              <div class="card-body form-inline center">
-			               		 <div class="form-group">
-								    <label for="name">Name : </label>
-								    <input type="name" class="form-control" id="name">
-								    &nbsp; &nbsp;
-								  </div>
+			              <div class="card-body">	               		
+								  <div class="form-group">
+									   <label for="name">Name : </label>
+									   <input type="name" class="form-control" id="name">
+									   &nbsp; &nbsp;
+						 		  </div>
 								  <div class="form-group">
 								    <label for="surname">Surname : </label>
 								    <input type="surname" class="form-control" id="surname">
-								  </div> 
-			              </div>
-			              <div class="card-body form-inline center">
-			               		<div class="form-group form-inline center">
+								  </div>&nbsp; &nbsp;
+								  <div class="form-groum">
 							    	<label for="Profession">Profession : </label>
 							    	<input type="Profession" class="form-control" id="Profession">
 								</div>
-								    &nbsp; &nbsp;
-								<div class="form-group">
-								    <label for="country">Country : </label>
-								    <input type="country" class="form-control" id="country">
-								</div> 
 			              </div>
-			              <div class="card-body form-inline center">
-			               		<div class="form-group form-inline center">
+			              <div class="card-body">
+			               		<div class="form-group">
 							    	<label for="availability">Availability : </label>
 							    	<input type="availability" class="form-control" id="availability">
 								</div>
@@ -59,7 +52,11 @@
 								<div class="form-group">
 								    <label for="age">Age : </label>
 								    <input type="age" class="form-control" id="age">
-								</div> 
+								</div>&nbsp; &nbsp;
+								<div class="form-group">
+								    <label for="country">Country : </label>
+								    <input type="country" class="form-control" id="country">
+								</div>
 			              </div>
 			             	<div class="form-group center">
 							    <label for="age">Gender : </label>
@@ -122,12 +119,8 @@
 			</div>
 		</form>
 
-		
-
 	    <%@ include file = "footer.jsp" %>
-
-	   
-
+	   	
 	    <!-- Bootstrap core JavaScript -->
 	    <script src="vendor/jquery/jquery.min.js"></script>
 	    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
