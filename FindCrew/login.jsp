@@ -57,12 +57,16 @@
     </nav>
 
     <!-- Page Content -->
-    <% if(request.getAttribute("message") != null) { %>   
+
+    <% if(request.getAttribute("message") != null) { %> 
+    <p><br></p> 
+    <p><br></p> 
+     
       <div class="alert alert-danger text-center" role="alert"><%=(String)request.getAttribute("message") %></div>
     <% } %>
 
     <p><br></p>
-    <p><br></p>
+
     
     <form method="post" action="loginController.jsp">
     <div class="login-wrap">

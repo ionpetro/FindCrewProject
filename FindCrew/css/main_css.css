@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic);
 
-body {
-    font-family: 'Source Sans Pro'
+body, html {
+    font-family: 'Source Sans Pro';
     line-height: 1.5;
     color: #323232;
     font-size: 15px;
@@ -9,6 +9,8 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
+    height: 100%;
+    margin: 0;
 }
 .heading-title {
     margin-bottom: 50px;
@@ -137,15 +139,6 @@ body {
     display: inline-block;
 }
 
-.header-back {
-    background-image:url(main4.jpg);
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
 .colortxt {
     color:#387B7A;
 }
@@ -155,3 +148,18 @@ body {
     color:#387B7A;
 
 }
+
+.bg {
+    /* The image used */
+    background-image: url("../images/main4.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+

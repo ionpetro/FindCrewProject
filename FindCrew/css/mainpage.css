@@ -5,12 +5,12 @@
  */
 
 header {
-  padding: 154px 0 100px;
+  padding: 300px 0 100px;
 }
 
 @media (min-width: 992px) {
   header {
-    padding: 156px 0 100px;
+    padding: 300px 0 100px;
   }
 }
 
@@ -23,12 +23,5 @@ section {
   margin-bottom: 30px;
 }
 
-.ela {
-  background-color: aqua;
-}
 
-.form-control:focus { 
-    outline: none !important;
-    border-color: white;
-    box-shadow: 0 0 10px #97C4BD;
-}
+

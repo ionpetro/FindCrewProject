@@ -26,7 +26,7 @@
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
 
     
 
@@ -66,48 +66,47 @@
       </div>
     </nav>
 
-    <header class="header-back text-white">
+    <header class="bg">
       <div class="container text-center">
+           <div class="container text-center">
         
-          <p>
-            <div class="container text-center">
-            <p></p>
-            <h2 class="text-white" class="container text-center">FIND YOUR CREW</h2>
-          </div>
-          </p>
-          
+            <h1 class="text-white" class="container text-center">FIND YOUR CREW</h1>
+          </div>         
           <form>
-            <div class="row">
-              <div class="container col-sm-7"> 
-                <select class="form-control form-control-sm text-center">
-                  <label><option value="none">Profession</option></label>
-                  <option value="captain">Captain</option>
-                  <option value="navy">Sailor</option>
-                  <option value="cleaner">Cleaner</option>
-                  <option value="cooker">Cooker</option>
+
+              <div class="sel sel--black-panther">
+                <select name="select-profession" id="select-profession">
+                  <option value="" disabled>Profession</option>
+                  <option value="hacker">Hacker</option>
+                  <option value="gamer">Gamer</option>
+                  <option value="developer">Developer</option>
+                  <option value="programmer">Programmer</option>
+                  <option value="designer">Designer</option>
                 </select>
               </div>
-              <p><br></p>
-              <div class="container col-sm-7">
-                <select class="form-control form-control-sm text-center">
-                  <label><option value="none">Country</option></label>
-                  <option value="greece">Greece</option>
-                  <option value="italy">Italy</option>
-                  <option value="spain">Turkey</option>
-                  <option value="portugal">Cyprus</option>
-                  <option value="turkey">Croatia</option>
+              <div class="sel sel--superman">
+                <select name="select-superpower" id="select-superpower">
+                  <option value="" disabled>Superpower</option>
+                  <option value="hacker">Power</option> 
+                  <option value="gamer">Speed</option>
+                  <option value="developer">Acrobatics</option>
+                  <option value="programmer">Accuracy</option>
                 </select>
-                <p></p>
-              </div>
-            </div>
+              </div>    
+              <button class="button" href="google.com" style="vertical-align:middle"><span>Search</span></button>
           </form>
+
+          <br>
+         <div class="container text-center" style="color: white;"><h3>Looking for a job?</h3>
+         </div>
+
+
+          <div class="text-center">
+              <a href="create_cv.jsp"><button type="submit" class="btn" style="color:#387B7A">Apply</button>
+          </div></a>
               
         
-        <div>
-          <a href="profiles.html"><button class="button" style="vertical-align:middle"><span>Search</span></button></a>
-        </div>
-      
-      &nbsp;
+    
     </header>
 
 
@@ -326,6 +325,7 @@
 
     <!-- Custom JavaScript for this theme -->
     <script src="js/scrolling-nav.js"></script>
+    <script src="js/menu.js"></script>
 
   </body>
 
