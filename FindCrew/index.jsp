@@ -30,6 +30,8 @@
 
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <link rel="icon" href="images/favicon.ico">
+
 
 
     

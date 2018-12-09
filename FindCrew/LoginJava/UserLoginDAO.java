@@ -41,7 +41,7 @@ public class UserLoginDAO {
 
 			while (rs.next()) {
 
-				userlist.add( new UserLogin(rs.getString("username"), rs.getString("password")) );
+				userlist.add(new UserLogin(rs.getInt("idshipowner"), rs.getString("username"), rs.getString("password"), rs.getString("name"), rs.getString("surname"), rs.getString("email")) );
 
 			} //End of while
 
@@ -92,16 +92,16 @@ public class UserLoginDAO {
 			ResultSet rs = stmt1.executeQuery();
 
 
-			if (rs.next()) {
+			while (rs.next()) {
 
-			UserLogin user = new UserLogin(rs.getString("username"), rs.getString("password"));
+			UserLogin user = new UserLogin(rs.getInt("idshipowner"), rs.getString("username"), rs.getString("password"), rs.getString("name"), rs.getString("surname"), rs.getString("email"));
 			return user;	
-			} else {
+			} 
 			rs.close();
 			stmt1.close();
 			Connect.close();
 			return null;
-		}
+		
 		} catch (Exception e) {
 
 					throw new Exception("MySQL Driver error: " + e.getMessage());
@@ -170,5 +170,57 @@ public class UserLoginDAO {
 
 
 	} //End of authenticate
+	
+	/* registerUser
+	*@param user 
+	*@exception
+	*/
+	
+	public void registerUser(UserLogin user) throws Exception {
+		
+		Connection con = null;
+		
+		DB Connect = new DB();
+		
+		//Define SQL Statement (to be executed)
+		String sql3 = "INSERT INTO shipowner(idshipowner, name, surname, username, password, email)" + "VALUES (?, ?, ?, ?, ?, ?);";
+		
+		try {
+			
+			con = Connect.getConnection();
 
+			PreparedStatement stmt = con.prepareStatement(sql3);
+
+			//setvalues
+			stmt.setInt(1, user.getShipownerid());
+			stmt.setString(2, user.getName());
+			stmt.setString(3, user.getSurname());
+			stmt.setString(4, user.getUsername());
+			stmt.setString(5, user.getPassword());
+			stmt.setString(6, user.getEmail());
+
+			stmt.executeUpdate();
+
+			stmt.close();
+			Connect.close();
+			
+		} catch (Exception e) {
+			throw new Exception("MySQL Driver error: " + e.getMessage());
+			
+		} finally {
+			
+			try {
+				
+				Connect.close();
+				
+			} catch (Exception e) {
+				
+			}
+						
+		} // End of Try
+			
+		
+	} //End of registerUser
+	
+	
 } //End of class
