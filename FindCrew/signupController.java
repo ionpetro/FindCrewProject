@@ -16,7 +16,7 @@ public class signupController extends HttpServlet {
 		String confirm = request.getParameter("confirm");
 		String email = request.getParameter("email");
 		String checkbox = request.getParameter("checkbox");
-		int shipownerid = 100;
+		int shipownerid = 234;
 		
 		
 		/* General try */

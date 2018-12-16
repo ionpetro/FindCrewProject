@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="error_page.jsp"%>
 <%@ page import="LoginJava.*" %>
+<%@ page import="Fields.*" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -115,49 +118,50 @@
 
     <% } %>
 
-    <header class="header-back text-white">
+    <header class="bg">
       <div class="container text-center">
         
-          <p>
-            <div class="container text-center">
+          <div class="container text-center">
             <p></p>
             <h2 class="text-white" class="container text-center">FIND YOUR CREW</h2>
           </div>
-          </p>
+          <%
+          indexfieldsDAO ud = new indexfieldsDAO();
+          List<indexfields> fields = ud.getFields();
+          %>
           
-          <form>
+          <form action="profiles.jsp">
             <div class="row">
               <div class="container col-sm-7"> 
-                <select class="form-control form-control-sm text-center">
+                <select name="profession" class="form-control form-control-sm text-center">
                   <label><option value="none">Profession</option></label>
-                  <option value="captain">Captain</option>
-                  <option value="navy">Sailor</option>
-                  <option value="cleaner">Cleaner</option>
-                  <option value="cooker">Cooker</option>
+                   <%  for(indexfields field : fields) { %> 
+                  <option><%=field.getProfession() %></option>
+                  <% } %>
                 </select>
               </div>
               <p><br></p>
               <div class="container col-sm-7">
-                <select class="form-control form-control-sm text-center">
+                <select name="country" class="form-control form-control-sm text-center">
                   <label><option value="none">Country</option></label>
-                  <option value="greece">Greece</option>
-                  <option value="italy">Italy</option>
-                  <option value="spain">Turkey</option>
-                  <option value="portugal">Cyprus</option>
-                  <option value="turkey">Croatia</option>
+                  <%
+                  for(indexfields field : fields) { %> 
+                  <option><%=field.getCountry() %></option>
+                  <% } %>
                 </select>
                 <p></p>
               </div>
             </div>
+            <div>
+             <button type="submit" value="Submit" class="button" style="vertical-align:middle"><span>Search</span></button>
+            </div>
           </form>
               
         
-        <div>
-          <a href="profiles.jsp"><button class="button" style="vertical-align:middle"><span>Search</span></button></a>
-        </div>
+        
          
          <p><br></p>
-         <div class="container text-center"><h3>Looking for a job?</h3>
+         <div class="container text-center text-white"><h3>Looking for a job?</h3>
          </div>
 
          <div class="text-center">

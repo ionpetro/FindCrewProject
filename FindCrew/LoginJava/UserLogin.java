@@ -19,8 +19,17 @@ public class UserLogin {
 	 * @param username
 	 * @param password
 	 */
-	public UserLogin(int idshipowner, String username, String password, String email, String name, String surname) {
+	public UserLogin(String username, String password, String email, String name, String surname) {
 				
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.name = name;
+		this.surname = surname;	
+		
+	}
+	public UserLogin(int idshipowner, String username, String password, String email, String name, String surname) {
+		
 		this.username = username;
 		this.password = password;
 		this.email = email;
@@ -28,8 +37,8 @@ public class UserLogin {
 		this.surname = surname;
 		this.idshipowner = idshipowner;
 		
+		
 	}
-	
 	/* Getters & Setters */
 	/**
 	 * @return the username
