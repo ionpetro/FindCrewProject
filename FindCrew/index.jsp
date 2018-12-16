@@ -329,7 +329,7 @@
             &nbsp;
 
             <form>
-              <div class="form-group">
+              <div class="form-group" name="form2" method="post" action="General_contact_controller.jsp" >
                 <label for="exampleInputPassword1">Name*</label>
                 <input type="name" class="form-control" id="fullname" placeholder="Name" name="name">
               </div>
