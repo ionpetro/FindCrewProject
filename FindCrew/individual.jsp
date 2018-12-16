@@ -48,7 +48,7 @@
 		               		<p class="card-text">Jerry is an experienced captain who lives in Spain. He is energetic and problem-oriented.</p>
 		              </div>
 		            </div>
-
+                    <p></p>
 		            <div class="card" >
 		            	<div class="card-header"><b>Experience</b></div>
 		             	<div class="card-body">
@@ -57,7 +57,7 @@
 			                <p>1985 - 1997: British Tanker company </p>
 		               </div>
 		            </div>
-
+                    <p></p>
 		            <div class="card">
 		            	<div class="card-header"><b>Education</b></div>
 		             	<div class="card-body">
@@ -65,6 +65,7 @@
 		                     <p>1963 - 1981: Educación Secundaria Obligatoria</p>
 		               </div>
 		            </div>
+		            <p></p>
 		            <div class="card">
 		            	<div class="card-header"><b>Languages</b></div>
 		             	<div class="card-body">

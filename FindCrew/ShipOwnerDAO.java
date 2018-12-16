@@ -16,10 +16,12 @@ public class ShipOwnerDAO {
   	Connection con = null;
 
   	//Define the SQL statement (to be executed)
-  	String sql = "INSERT INTO contact_request(username, name, surname, email, password) "  //??? ti tha dinei sti vasi? afou egw den pernw to id tou shipowner pos tha to cvro?
+  	//??? ti tha dinei sti vasi? afou egw den pernw to id tou shipowner pos tha to vro?
+  	//mipos prepei me vasei to name  na valo ena deutero sql stament pou na leei feremou ta stoixeia tou shipowner kai meta na sinexizo kanpnika?
+  	String sql = "INSERT INTO contact_request(username, name, surname, email, password) "
   						+ " VALUES (?, ?, ?, ?, ?);";
 
-        DB db = new DB();
+      DB db = new DB();
       try {
   			//open connection and get Connection object
   		    con = db.getConnection();

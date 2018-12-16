@@ -56,28 +56,31 @@
         <div class="card-body" >
           <h3 class="card-title">Contact Request</h3>
 
-          <form class="form-horizontal" name="form1" method="post" action="servlet/Contact_request_controller" >
+          <form class="form-horizontal" name="form1" method="post" action="Contact_request_controller.jsp" >
 
             
                 <label for="usr">Username</label>
-                <input type="text" class="form-control" id="username" required="textarea" name="name">
+                <input type="text" class="form-control" id="username" required="textarea" name="username">
           
             
-                <label for="usr">Period (Start - End)</label>
-                <input type="text" class="form-control" id="surname" required="textarea" name="surname">
+                <label for="usr">Strating Period </label>
+                <input type="text" class="form-control" id="start" required="textarea" name="start">
+
+                <label for="usr">Ending Period </label>
+                <input type="text" class="form-control" id="end" required="textarea" name="end">
           
                 <label for="usr">Departure point</label>
-                <input type="text" class="form-control" id="email" required="textarea" name="email">
+                <input type="text" class="form-control" id="email" required="textarea" name="departure">
             
            
               <label for="comment">Description</label>
-              <textarea class="form-control" rows="5" id="desc" name="description"></textarea>
+              <textarea class="form-control" rows="5" id="desc" required="textarea" name="description"></textarea>
 
 
            <p> </p>
            <div class="form-group">
               <label class="checkbox-inline">
-                 <input type="checkbox" name="checkbox"value="checkbox">I agree with the terms and conditions
+                 <input type="checkbox" name="checkbox" required="textarea" value="checkbox">I agree with the terms and conditions
               </label>  
           </div>
 
