@@ -19,13 +19,12 @@ try {
 <jsp:forward page = "login.jsp"/> 
 <% 
 }
-%>
 
-<%
+
+
 UserLogin usr = ud.findUser(username);
 session.setAttribute("user-object", usr);
 %>
-
 <jsp:forward page = "index.jsp"/>
 
 	

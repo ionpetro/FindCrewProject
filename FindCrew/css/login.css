@@ -18,6 +18,13 @@ header {
   }
 }
 
+footer {
+	position: absolute;
+	bottom: 0;
+
+}
+
+
 section {
   padding: 150px 0;
 }
@@ -66,7 +73,3 @@ section {
   display: block;
 }
 
-.stay-down {
-  position: absolute;
-  bottom: 0;
-}

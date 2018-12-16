@@ -1,6 +1,15 @@
+
+html{
+	height: 100%;
+}
+
 body{
 	margin:0;
 	font-size: 14px;
+	height: 100%;
+	min-height: 100%;
+	padding:0; 
+	margin:0;
 }
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
@@ -11,16 +20,17 @@ a{color:inherit;text-decoration:none}
 	width:100%;
 	margin:auto;
 	max-width:525px;
-	min-height:700px;
+	min-height:900px;
 	position:relative;
-	background-image:url(main3.jpg);
+	background-image:url(../images/main3.jpg);
+	background-repeat: no-repeat;
 	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 .login-html{
 	width:100%;
 	height:100%;
 	position:absolute;
-	padding:90px 70px 50px 70px;
+	padding:80px 70px 50px 70px;
 
 }
 .login-html .sign-in-htm,
@@ -147,8 +157,8 @@ a{color:inherit;text-decoration:none}
 	text-align:center;
 }
 
-.footer {
+footer {
 	position: relative;
-	bottom: 0;
-	width: 100%;
+	 bottom: 0;
+	 width: 100%;
 }

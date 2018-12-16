@@ -57,15 +57,20 @@
     </nav>
 
     <!-- Page Content -->
-    <% if(request.getAttribute("message") != null) { %>   
+
+    <% if(request.getAttribute("message") != null) { %> 
+    <p><br></p> 
+    <p><br></p> 
+     
       <div class="alert alert-danger text-center" role="alert"><%=(String)request.getAttribute("message") %></div>
     <% } %>
 
     <p><br></p>
-    <p><br></p>
+
     
-    <form method="post" action="loginController.jsp">
+    
     <div class="login-wrap">
+      <form method="post" action="loginController.jsp">
       <div class="login-html">
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"><strong>Sign In</strong></label>
         <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"><strong>Sign Up</strong></label>
@@ -80,40 +85,51 @@
               <input id="pass" type="password" name="password" class="input" data-type="password" required>
             </div>
             <div class="group">
-              <input id="check" type="checkbox" class="check" checked>
-              <label for="check"><span class="icon"></span><strong> Keep me Signed in </strong></label>
+              <button class="button" name="submit" type="submit">Sign In</button>
             </div>
-            <div class="group">
-              <button><input type="submit" name="submit" class="button" value="Sign In"></button>
-            </div>
+            <h6>If you dont have an account, sign up!</h6>
+            </form>
             <div class="hr"></div>
           </div>
+          <form method="post" action="../servlet/signupController">
           <div class="sign-up-htm">
             <div class="group">
-              <label for="user" class="label"><strong>Username</strong></label>
-              <input id="user" type="text" class="input">
+              <label for="pass" class="label"><strong>Name</strong></label>
+              <input id="pass" type="text" name="name" class="input">
             </div>
             <div class="group">
-              <label for="pass" class="label"><strong>Password</strong></label>
-              <input id="pass" type="password" class="input" data-type="password">
-            </div>
-            <div class="group">
-              <label for="pass" class="label"><strong>Repeat Password</strong></label>
-              <input id="pass" type="password" class="input" data-type="password">
+              <label for="pass" class="label"><strong>Surname</strong></label>
+              <input id="pass" type="text" name="surname" class="input">
             </div>
             <div class="group">
               <label for="pass" class="label"><strong>Email Address</strong></label>
-              <input id="pass" type="text" class="input">
+              <input id="pass" type="text" name="email" class="input">
             </div>
             <div class="group">
-              <input type="submit" class="button" value="Sign Up">
+              <label for="user" class="label"><strong>Username</strong></label>
+              <input id="user" type="text" name="username" class="input">
+            </div>
+            <div class="group">
+              <label for="pass" class="label"><strong>Password</strong></label>
+              <input id="pass" type="password" name="password" class="input" data-type="password">
+            </div>
+            <div class="group">
+              <label for="pass" class="label"><strong>Repeat Password</strong></label>
+              <input id="pass" type="password" name="confirm" class="input" data-type="password">
+            </div>
+            <div class="group">
+              <label for="pass" class="label"><input id="pass" type="checkbox" name="checkbox"><strong> I agree to the terms and conditions</strong></label>
+            </div>
+            <div class="group">
+              <button name="submit" type="submit" class="button">Sign Up</button>
             </div>
             <div class="hr"></div>
           </div>
         </div>
       </div>
+      </form>
     </div>
-  </form>
+ 
 
 
 
