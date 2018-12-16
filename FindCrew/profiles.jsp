@@ -1,4 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="FindCrewJava.*, java.util.List" %>
+
+
+<%
+//here I have to get profession and country from searchform
+
+//User user = (User)session.getAttribute("uobj");
+
+CrewDAO cdao = new CrewDAO();
+
+//replace profession and country
+List<Crew> crews = cdao.getCrews("Sailor", "Greece");
+
+// Instruct the browser not to cache this page
+response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+response.setHeader("Pragma", "no-cache");
+response.setDateHeader("Expires", 0);
+
+
+
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +29,7 @@
 	</head>
 
 	<body>
-
+	
 		<!-- Navigation -->
 		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
 		  <div class="container">
@@ -27,15 +48,27 @@
 					  <a href="index.html#team" class="dropdown-item">Team</a>
 					</div>
 				</li>
-				<li class="nav-item">
-				  <a class="nav-link" href="profiles.html">Crew</a>
+				<li class="nav-item active">
+				  <a class="nav-link" href="profiles.jsp">Crew</a>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="index.html#contact">Contact</a>
+				  <a class="nav-link js-scroll-trigger" href="index.jsp#contact">Contact</a>
 				</li>
+				<%
+					if (session.getAttribute("user-object") == null){
+				%>
 				<li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="login.html">Login</a>
+				  <a class="nav-link js-scroll-trigger" href="login.jsp">Login/Sign up</a>
 				</li>
+				<%
+					} else {
+				%>
+				<li class="nav-item">
+				  <a class="nav-link js-scroll-trigger" href="logout.jsp">Logout</a>
+				</li>
+				<%
+					}
+				%>
 			  </ul>
 			</div>
 		  </div>
@@ -103,25 +136,26 @@
 				<div class="col-lg-6 col-xl-6 col-xs-12 col-sm-12 col-md-12">
 					
 					<!-- Crew 1 -->
+					<% for (Crew crew : crews) {%>
 					<div class="card my-4" id="profil">
 						<div class="row">
 							<div class="col-sm-3" align="right">
-								<img class="card-img-top" src="images/captain.jpg" alt="Card image cap">
+								<img class="card-img-top" src="images/<%=crew.getImage_file() %>" alt="Card image cap">
 							</div>
 							<div class="col-sm-9">
-								<h5>Jerry Liam</h5>
+								<h5><%=crew.getName() %> <%=crew.getSurname() %></h5>
 								<p>
 									<b>Profession:</b> 
-									Captain
+									<%=crew.getProfession() %>
 									<br> 
 									<b>Country:</b> 
-									Spain
+									<%=crew.getCountry() %>
 									<br> 
 									<b>Gender:</b> 
-									Man
+									<%=crew.getGender() %>
 									<br>
 									<b>Available from:</b> 
-									20 December 2018
+									<%=crew.getAvailability() %>
 									<div class="text-right">
 										<a href="individual.jsp"><button type="button" class="btn btn-primary btn">View Profile</button></a>
 									</div>
@@ -129,6 +163,7 @@
 							</div>
 						</div>
 					</div>
+					<% } %>
 					<!-- /.row -->
 
 					<hr>
