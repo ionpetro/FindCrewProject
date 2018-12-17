@@ -9,114 +9,18 @@
 <html lang="en">
 
   <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>FindCrew</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<%@ include file="header.jsp"%>
 
     <!-- Custom styles for this template -->
     <link href="css/mainpage.css" rel="stylesheet">
 
     <!-- Custom style for main html -->
     <link href="css/main_css.css" rel="stylesheet">
-
-    <!-- Font-Awesome icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" type="text/css" href="css/button.css">
-
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <link rel="icon" href="images/favicon.ico">
-
-
-
-    
-
   </head>
 
   <body id="page-top">
 
-    <% if(session.getAttribute("user-object") != null) {
-    UserLogin user = (UserLogin)session.getAttribute("user-object");
-     %>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.jsp"><img style="max-width:110px; margin-top: -4px;" src="images/l.png "></a>
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown"> 
-                            
-                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">About</a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                  <a href="#about" class="dropdown-item">About Us</a>
-                  <a href="#services" class="dropdown-item">Services</a>
-                  <a href="#team" class="dropdown-item">Team</a>
-                </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profiles.jsp">Crew</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="logout.jsp">Logout</a>
-              <small> signed in as <%=user.getUsername()%> </small> 
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    
-    <% } else { %>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="index.jsp"><img style="max-width:110px; margin-top: -4px;" src="images/l.png "></a>
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">              
-                <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">About</a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-                  <a href="#about" class="dropdown-item">About Us</a>
-                  <a href="#services" class="dropdown-item">Services</a>
-                  <a href="#team" class="dropdown-item">Team</a>
-                </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="profiles.jsp">Crew</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="login.jsp">Login</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <% } %>
+    <%@ include file="navigationmenu_shipowner.jsp"%>
 
     <header class="bg">
       <div class="container text-center">
@@ -333,7 +237,7 @@
             &nbsp;
 
             <form>
-              <div class="form-group" name="form2" method="post" action="General_contact_controller.jsp" >
+              <div class="form-group">
                 <label for="exampleInputPassword1">Name*</label>
                 <input type="name" class="form-control" id="fullname" placeholder="Name" name="name">
               </div>
@@ -366,18 +270,5 @@
 
     
     <%@ include file = "footer.jsp" %>
-
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom JavaScript for this theme -->
-    <script src="js/scrolling-nav.js"></script>
-
   </body>
-
 </html>

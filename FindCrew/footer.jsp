@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page errorPage="error_page.jsp"%>
 
 <!-- footer -->
 <footer class="py-3 bg-dark">
@@ -17,7 +18,13 @@
 
 <!-- =================== Place all javascript at the end of the document so the pages load faster =================== -->
 <!-- jQuery library -->
-<script src="<%=request.getContextPath() %>/js/jquery.min.js"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
 <!-- Bootstrap core JavaScript -->
-<script src="<%=request.getContextPath() %>/js/bootstrap.min.js"></script>
-<script src="<%=request.getContextPath() %>/js/bootstrap.bundle.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom JavaScript for this theme -->
+<script src="js/scrolling-nav.js"></script>

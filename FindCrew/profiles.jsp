@@ -1,16 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="FindCrewJava.*, java.util.List" %>
+<%@ page import="FindCrewJava.*" %>
+<%@ page errorPage="error_page.jsp"%>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 
 
 <%
-//here I have to get profession and country from searchform
 
-//User user = (User)session.getAttribute("uobj");
+String prof = request.getParameter("profession");
+String coun = request.getParameter("country");
+
+//UserLogin user = (UserLogin)session.getAttribute("user-object");
 
 CrewDAO cdao = new CrewDAO();
 
-//replace profession and country
-List<Crew> crews = cdao.getCrews("Sailor", "Greece");
+/*
+if (profession.equals("") & (country.equals("")){
+	List<Crew> crews = cdao.getAllCrew();
+} else {
+	List<Crew> crews = cdao.getCrews(prof, coun);
+}
+*/
+
+List<Crew> crews = cdao.getCrews(prof, coun);
+
 
 // Instruct the browser not to cache this page
 response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
@@ -29,50 +42,8 @@ response.setDateHeader("Expires", 0);
 	</head>
 
 	<body>
-	
-		<!-- Navigation -->
-		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
-		  <div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="index.html"><img style="max-width:110px; margin-top: -4px;" src="images/l.png "></a>
-			
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			  <span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-			  <ul class="navbar-nav ml-auto">
-				<li class="nav-item dropdown">              
-					<a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">About</a>
-					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-					  <a href="index.html#about" class="dropdown-item">About Us</a>
-					  <a href="index.html#services" class="dropdown-item">Services</a>
-					  <a href="index.html#team" class="dropdown-item">Team</a>
-					</div>
-				</li>
-				<li class="nav-item active">
-				  <a class="nav-link" href="profiles.jsp">Crew</a>
-				</li>
-				<li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="index.jsp#contact">Contact</a>
-				</li>
-				<%
-					if (session.getAttribute("user-object") == null){
-				%>
-				<li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="login.jsp">Login/Sign up</a>
-				</li>
-				<%
-					} else {
-				%>
-				<li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="logout.jsp">Logout</a>
-				</li>
-				<%
-					}
-				%>
-			  </ul>
-			</div>
-		  </div>
-		</nav>
+		
+	<%@ include file="navigationmenu_shipowner.jsp"%>
 
 		<!-- Page Content -->
 		<div class="container">
@@ -157,7 +128,7 @@ response.setDateHeader("Expires", 0);
 									<b>Available from:</b> 
 									<%=crew.getAvailability() %>
 									<div class="text-right">
-										<a href="individual.jsp"><button type="button" class="btn btn-primary btn">View Profile</button></a>
+										<a href="individual.jsp?idcrew=<%=crew.getIdcrew() %>"><button type="button" class="btn btn-primary btn">View Profile</button></a>
 									</div>
 								</p>
 							</div>

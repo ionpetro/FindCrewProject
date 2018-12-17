@@ -19,6 +19,8 @@
     <link href="css/login.css" rel="stylesheet">
 
     <link href="css/signin.css" rel="stylesheet">
+	
+	<link href="css/main_css.css" rel="stylesheet">
 
   </head>
 
