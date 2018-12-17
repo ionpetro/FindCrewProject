@@ -1,0 +1,65 @@
+/*!
+ * Start Bootstrap - 1 Col Portfolio (https://startbootstrap.com/template-overviews/1-col-portfolio)
+ * Copyright 2013-2018 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-1-col-portfolio/blob/master/LICENSE)
+ */
+
+body {
+    font-family: 'Source Sans Pro'
+    line-height: 1.5;
+    color: #323232;
+    font-size: 15px;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+}
+
+@media (min-width: 992px) {
+  header {
+    padding: 156px 0 100px;
+  }
+}
+
+.pagination {
+  margin-bottom: 15px;
+}
+
+h2 {
+	font-size: 35px;
+}
+
+body{padding-top:70px;}
+
+#profil {
+	padding: 20px;
+	background-color: #F8FAFA;
+}
+
+.btn {
+	background-color:#598881;
+  border-color: #598881;
+	color:white;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #97C4BD;
+    border-color: white; /*set the color you want here*/
+}
+
+.card-header{
+  background-color: #cee0de;
+}
+
+header {
+  padding: 154px 0 100px;
+}
+
+section {
+  padding: 50px 0;
+}
+
+footer {
+	position: responsive;
+}

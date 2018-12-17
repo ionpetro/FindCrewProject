@@ -18,10 +18,8 @@ section {
   padding: 150px 0;
 }
 
-
-
 .header-back {
-    background-image: url("b4.jpg") ;
+    background-color: #9DB3B0;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -29,21 +27,14 @@ section {
     background-size: cover;
 }
 
-.container{
-	color:black;
-}
-
 #profil {
 	padding: 20px;
 	background-color: #F8FAFA;
-	border-color: #598881;
 }
-
-
 
 .btn {
 	background-color:#598881;
-    border-color: #598881;
+  border-color: #598881;
 	color:white;
 }
 
