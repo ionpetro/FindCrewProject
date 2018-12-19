@@ -90,6 +90,7 @@
               <button class="button" name="submit" type="submit">Sign In</button>
             </div>
             <h6>If you dont have an account, sign up!</h6>
+            <h4 style="color: white">If you want to sign-in try <p>username: skalipetis | password: 123456 </p></h4>
             </form>
             <div class="hr"></div>
           </div>
@@ -121,7 +122,7 @@
             </div>
             <div class="group">
               <label for="pass" class="label"><input id="pass" type="checkbox" name="checkbox"><strong> I agree to the terms and conditions</strong></label>
-            </div>
+             </div>
             <div class="group">
               <button name="submit" type="submit" class="button">Sign Up</button>
             </div>
