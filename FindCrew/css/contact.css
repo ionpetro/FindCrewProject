@@ -1,0 +1,53 @@
+/*!
+ * Start Bootstrap - Blog Home (https://startbootstrap.com/template-overviews/blog-home)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
+ */
+
+body {
+  padding-top: 60px;
+  margin-top: 15px;
+  background-image: url("../images/back_contact.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 79px;
+  }
+}
+
+
+
+.card {
+        margin:auto;
+        float: none; /* Added */
+        margin-bottom: 20px; /* Added */
+        background-color: #F8FAFA;
+        
+
+}
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color:  #598881;
+    border-color: #598881; /*set the color you want here*/
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #97C4BD;
+    border-color: #97C4BD; /*set the color you want here*/
+}
+
+
+.grab {cursor: -webkit-grab; cursor: grab;}
+
+footer {
+  position: responsive;
+}
