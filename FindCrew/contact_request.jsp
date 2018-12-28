@@ -32,12 +32,7 @@
           <h3 class="card-title">Contact Request</h3>
 
           <form class="form-horizontal" name="form1" method="post" action="Contact_request_controller.jsp" >
-
-            
-                <label for="usr">Username</label>
-                <input type="text" class="form-control" id="username" required="textarea" name="username">
-          
-            
+                               
                 <label for="usr">Starting Period </label>
                 <input type="text" class="form-control" id="start" required="textarea" name="start">
 
@@ -55,7 +50,7 @@
            <p> </p>
            <div class="form-group">
               <label class="checkbox-inline">
-                 <input type="checkbox" name="checkbox" required="textarea" value="checkbox">I agree with the terms and conditions
+                 <input type="checkbox" name="checkbox" required="textarea" value="checkbox"> I agree with the terms and conditions
               </label>  
           </div>
 

@@ -8,7 +8,7 @@
    int id = Integer.parseInt(x);
 
    CrewDAO cdao = new CrewDAO();
-    Crew individual = cdao.getIndividual(id);
+   Crew individual = cdao.getIndividual(id);
  %>
 
 <!DOCTYPE html>
@@ -84,6 +84,8 @@
 	        <!-- /.row -->
 	    </div>
 	   <!-- /.container -->
+
+	   <% request.setAttribute("id_crew",individual.getIdcrew());  %>
 
 	    <%@ include file = "footer.jsp" %>
  </body>

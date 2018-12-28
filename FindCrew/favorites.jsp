@@ -1,8 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="FavouritesJava.*" %>
 <%@ page import="FindCrewJava.*" %>
 <%@ page errorPage="error_page.jsp"%>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+
+<%
+
+FavouritesDAO  favourites = new FavouritesDAO();
+int sid=1;
+int crewid = 1;
+favourites.addFavourite(sid,crewid);
+List<Crew> crews = favourites.getFavourites(sid);
+
+%>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,63 +39,38 @@
    <div class="container">
      <div class="row justify-content-center">
        <div class="col-lg-6 col-xl-6 col-xs-12 col-sm-12 col-md-12">
-         <!-- Crew 1 -->`
-          <div class="card my-4" id="profil" >
-            <div class="row">
-              <div class="col-sm-3" align="right">
-                <img class="card-img-top" src="images/captain.jpg" alt="Card image cap">
-              </div>
-              <div class="col-sm-9">
-                <h5>Jerry Liam</h5>
-                <p>
-                  <b>Profession:</b> 
-                  Captain
-                  <br> 
-                  <b>Country:</b> 
-                  Spain
-                  <br> 
-                  <b>Gender:</b> 
-                  Man
-                  <br>
-                  <b>Available from:</b> 
-                  20 December 2018
-                  <div class="text-right">
-                    <a href="individual.html"><button type="button" class="btn btn-primary btn">View Profile</button></a>
-                  </div>
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- /.row -->
           
-          <!-- Crew 2 -->
+          
+          <% for (Crew crew : crews) {%>
           <div class="card my-4" id="profil">
             <div class="row">
               <div class="col-sm-3" align="right">
-                <img class="card-img-top" src="images/member1.png" alt="Card image cap">
+                <img class="card-img-top" src="images/<%=crew.getImage_file() %>" alt="Card image cap">
               </div>
               <div class="col-sm-9">
-                <h5>Giorgos Kalipetis</h5>
+                <h5><%=crew.getName() %> <%=crew.getSurname() %></h5>
                 <p>
                   <b>Profession:</b> 
-                  Deckhand
+                  <%=crew.getProfession() %>
                   <br> 
                   <b>Country:</b> 
-                  Greece
+                  <%=crew.getCountry() %>
                   <br> 
                   <b>Gender:</b> 
-                  Man
+                  <%=crew.getGender() %>
                   <br>
                   <b>Available from:</b> 
-                  3 December 2017
+                  <%=crew.getAvailability() %>
                   <div class="text-right">
-                    <button type="button" class="btn btn-primary btn">View Profile</button>
+                    <a href="individual.jsp?idcrew=<%=crew.getIdcrew() %>"><button type="button" class="btn btn-primary btn">View Profile</button></a>
                   </div>
                 </p>
               </div>
             </div>
           </div>
+          <% } %>
           <!-- /.row -->
+          
 
           <hr>
 
