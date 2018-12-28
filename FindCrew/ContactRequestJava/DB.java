@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class DB {
 
-	/* Database connection settings, change: dbName, dbusername, dbpassword */
+	/* Database connection settings, change dbName, dbusername, dbpassword */
 	private final String dbServer = "195.251.249.131";
 	private final String dbServerPort = "3306";
 	private final String dbName = "ismgroup20";
@@ -21,7 +21,7 @@ public class DB {
 	 * the Connection object.
 	 *
 	 * @return Connection, the Connection object
-	 * @throws SQLException
+	 * @throws Exception
 	 */
 	public Connection getConnection() throws Exception {
 
@@ -60,7 +60,7 @@ public class DB {
 	} // End of getConnection
 
 	/**
-	 * Close database connection and release any other database resources. It is
+	 * Close database connection. It is
 	 * very important to close the database connection after it is used.
 	 *
 	 * @throws SQLException

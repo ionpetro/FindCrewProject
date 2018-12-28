@@ -64,8 +64,7 @@ public class ContactRequestDAO {
 	public void sendRequest(ContactRequest cd) throws Exception {
 
 		Connection con = null;
-		String sql = "INSERT INTO contact_request(idcrew,idshipowner, starting_period, ending_period, departure_point, description) "
-								+ " VALUES (?,?, ?, ?, ?, ?);";
+		String sql = "INSERT INTO contact_request(idcontact_request,idcrew,idshipowner, starting_period, ending_period, departure_point, description)"+"VALUES (?,?,?,?,?,?,?);";
 		DB db = new DB();
 		try {
 					//open connection and get Connection object
@@ -74,13 +73,14 @@ public class ContactRequestDAO {
 
 
 
-					 //set values to all parameters
-					stmt.setInt(1, cd.getCrew_id());
-					stmt.setInt(1, cd.getShipowner_id());
-					stmt.setString(2, cd.getStart());
-					stmt.setString(3, cd.getEnd());
-					stmt.setString(4, cd.getDeparture());
-					stmt.setString(5, cd.getDescription());
+					//set values to all parameters
+					stmt.setInt(1, 2);
+					stmt.setInt(2, cd.getCrew_id());
+					stmt.setInt(3, cd.getShipowner_id());
+					stmt.setString(4, cd.getStart());
+					stmt.setString(5, cd.getEnd());
+					stmt.setString(6, cd.getDeparture());
+					stmt.setString(7, cd.getDescription());
 
 					//execute the SQL statement (INSERT)
 					stmt.executeUpdate();
@@ -107,7 +107,7 @@ public class ContactRequestDAO {
 
 	      }
 
-
+          return;
 
 		}
 
