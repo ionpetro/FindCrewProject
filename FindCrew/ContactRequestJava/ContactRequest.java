@@ -8,6 +8,7 @@ public class ContactRequest {
 	private String end;
 	private String departure;
 	private String description;
+	private int idcontact_request;
 
 	public ContactRequest(int crew_id,int shipowner_id, String start, String end, String departure, String description) {
 
@@ -18,13 +19,34 @@ public class ContactRequest {
 			this.departure = departure;
 			this.description = description;
 	}
+
+	public ContactRequest(int idcontact_request, int crew_id,int shipowner_id, String start, String end, String departure, String description) {
+
+	            this.idcontact_request = idcontact_request;
+				this.crew_id = crew_id;
+				this.shipowner_id = shipowner_id;
+				this.start = start;
+				this.end = end;
+				this.departure = departure;
+				this.description = description;
+	}
+
+	 public int getIdcontact_request() {
+	   		return idcontact_request;
+	   	}
+
+
+    public void setIdcontact_request(int idcontact_request) {
+	   	this.idcontact_request = idcontact_request;
+   	}
+
    public int getCrew_id() {
    		return crew_id;
    	}
 
 
-      public void setCrew_id(int crew_id) {
-   		this.crew_id = crew_id;
+	  public void setCrew_id(int crew_id) {
+		this.crew_id = crew_id;
    	}
 
    public int getShipowner_id() {

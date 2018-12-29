@@ -11,7 +11,7 @@ public class ContactRequestDAO {
 	public List<ContactRequest> getRequests() throws Exception {
 
 		Connection con = null;
-		String sql = "SELECT * FROM contactRequests; ";
+		String sql = "SELECT * FROM contact_request; ";
 		DB db = new DB();
 		List<ContactRequest> c = new ArrayList<ContactRequest>();
 		try {
@@ -24,8 +24,8 @@ public class ContactRequestDAO {
 					ResultSet rs = stmt.executeQuery();
 
 					while (rs.next()) {
-						c.add( new ContactRequest(rs.getInt("Crew_id"), rs.getInt("Shipowner_id"), rs.getString("start"),
-												   rs.getString("end"),rs.getString("departure"),
+						c.add( new ContactRequest(rs.getInt("idcrew"), rs.getInt("idshipowner"), rs.getString("starting_period"),
+												   rs.getString("ending_period"),rs.getString("departure_point"),
 												   rs.getString("description")) );
 					}
 
@@ -74,7 +74,7 @@ public class ContactRequestDAO {
 
 
 					//set values to all parameters
-					stmt.setInt(1, 2);
+                    stmt.setInt(1, cd.getIdcontact_request());
 					stmt.setInt(2, cd.getCrew_id());
 					stmt.setInt(3, cd.getShipowner_id());
 					stmt.setString(4, cd.getStart());
