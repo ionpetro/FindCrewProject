@@ -16,7 +16,6 @@ public class signupController extends HttpServlet {
 		String confirm = request.getParameter("confirm");
 		String email = request.getParameter("email");
 		String checkbox = request.getParameter("checkbox");
-		int shipownerid = 234;
 		
 		
 		/* General try */
@@ -58,29 +57,24 @@ public class signupController extends HttpServlet {
 			out.println("<!-- Navigation -->");
 			out.println("    <nav class='navbar navbar-expand-lg navbar-light bg-light fixed-top' id='mainNav'>");
 			out.println("      <div class='container'>");
-			out.println("        <a class='navbar-brand js-scroll-trigger' href='index.jsp'><img style='max-width:110px; margin-top: -4px;' src='../FindCrew/images/l.png '></a>");
+			out.println("        <a class='navbar-brand js-scroll-trigger' href='../FindCrew/index.jsp'><img style='max-width:110px; margin-top: -4px;' src='../FindCrew/images/l.png '></a>");
 			out.println("        ");
 			out.println("        <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarResponsive' aria-controls='navbarResponsive' aria-expanded='false' aria-label='Toggle navigation'>");
 			out.println("          <span class='navbar-toggler-icon'></span>");
 			out.println("        </button>");
 			out.println("        <div class='collapse navbar-collapse' id='navbarResponsive'>");
 			out.println("          <ul class='navbar-nav ml-auto'>");
-			out.println("            <li class='nav-item dropdown'>              ");
-			out.println("                <a class='nav-link dropdown-toggle' id='navbarDropdownPortfolio' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false' href='#'>About</a>");
-			out.println("                <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownPortfolio'>");
-			out.println("                  <a href='#about' class='dropdown-item'>About Us</a>");
-			out.println("                  <a href='#services' class='dropdown-item'>Services</a>");
-			out.println("                  <a href='#team' class='dropdown-item'>Team</a>");
-			out.println("                </div>");
+			out.println("            <li class='nav-item'>");
+			out.println("              <a class='nav-link' href='../FindCrew/#about'>About</a>");
 			out.println("            </li>");
 			out.println("            <li class='nav-item'>");
-			out.println("              <a class='nav-link' href='profiles.jsp'>Crew</a>");
+			out.println("              <a class='nav-link' href='../FindCrew/profiles.jsp'>Crew</a>");
 			out.println("            </li>");
 			out.println("            <li class='nav-item'>");
-			out.println("              <a class='nav-link js-scroll-trigger' href='#contact'>Contact</a>");
+			out.println("              <a class='nav-link js-scroll-trigger' href='../FindCrew/#contact'>Contact</a>");
 			out.println("            </li>");
 			out.println("            <li class='nav-item'>");
-			out.println("              <a class='nav-link js-scroll-trigger' href='login.jsp'>Login</a>");
+			out.println("              <a class='nav-link js-scroll-trigger' href='../FindCrew/login.jsp'>Login</a>");
 			out.println("            </li>");
 			out.println("          </ul>");
 			out.println("        </div>");
@@ -93,7 +87,7 @@ public class signupController extends HttpServlet {
 			/* if statements */	
 			
 			UserLoginDAO user = new UserLoginDAO();
-			UserLogin usr = new UserLogin(shipownerid, username, password, email, name, surname);
+			UserLogin usr = new UserLogin(username, password, email, name, surname);
 			
 			
 			/* check if already exists */
@@ -106,7 +100,7 @@ public class signupController extends HttpServlet {
 				out.println("</div>");
 			} 
 			
-			else if ((name.length() >= 3) && (surname.length() >= 3) && (username.length() >= 5) && (password.length() >=5) && (password.equals(confirm))) {
+			else if ((name.length() >= 3) && (surname.length() >= 3) && (username.length() >= 5) && (password.length() >=5) && (password.equals(confirm)) && (trueusr == null)) {
 				
 				user.registerUser(usr);
 				
@@ -148,35 +142,41 @@ public class signupController extends HttpServlet {
 						k=k+1;
 				  }				  
 				  if (trueusr != null) {
-					  out.println ("<p> " + k + ".Username " + trueusr.getName() + " already exists</p>");
+					  out.println ("<p> " + k + ".Username " + trueusr.getUsername() + " already exists</p>");
 				   }//End of else
 				   out.println("</div>");
 			}
 			
 			
 			
-
-			out.println("");
 			out.println("</div>");
-			out.println("    <!-- Footer -->");
-			out.println("    <footer class='py-5 bg-dark'>");
-			out.println("    <div class='text-center text-white'>");
-			out.println("      <h3><b>Contact us</b></h3>");
-			out.println("      Athens University of Economics & Business <br>");
-			out.println("      28th Oktovriou 76, Athens 104 34 <br>");
-			out.println("      P: 6979876987");
-			out.println("    </div>");
-			out.println("    <br>");
-			out.println("    <div class='container'>");
-			out.println("      <p class='m-0 text-center text-white'>Copyright &copy; FindCrew 2018</p>");
-			out.println("    </div>");
-			out.println("    <!-- /.container -->");
-			out.println("    </footer>");
+			out.println("<!-- footer -->");
+			out.println("<footer class='py-3 bg-dark'>");
+			out.println("		<div class='text-center text-white'>");
+			out.println("			<h3><b>Contact us</b></h3>");
+			out.println("			Athens University of Economics & Business <br>");
+			out.println("			28th Oktovriou 76, Athens 104 34 <br>");
+			out.println("			P: 6979876987");
+			out.println("		</div>");
+			out.println("		<br>");
+			out.println("		<div class='container'>");
+			out.println("			<p class='m-0 text-center text-white'>Copyright &copy; FindCrew 2018</p>");
+			out.println("		</div>");
+			out.println("</footer>");
+			out.println("<!-- End footer -->");
 			out.println("");
+			out.println("<!-- =================== Place all javascript at the end of the document so the pages load faster =================== -->");
+			out.println("<!-- jQuery library -->");
+			out.println("<script src='vendor/jquery/jquery.min.js'></script>");
+			out.println("<!-- Bootstrap core JavaScript -->");
+			out.println("<script src='vendor/bootstrap/js/bootstrap.min.js'></script>");
+			out.println("<script src='vendor/bootstrap/js/bootstrap.bundle.min.js'></script>");
 			out.println("");
-			out.println("  </body>");
+			out.println("<!-- Plugin JavaScript -->");
+			out.println("<script src='vendor/jquery-easing/jquery.easing.min.js'></script>");
 			out.println("");
-			out.println("</html>");
+			out.println("<!-- Custom JavaScript for this theme -->");
+			out.println("<script src='js/scrolling-nav.js'></script>");
 			out.println("");
 
 		

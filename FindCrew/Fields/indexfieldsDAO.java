@@ -4,6 +4,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * UserDAO provides all the necessary methods related to user's.
@@ -19,7 +21,7 @@ public class indexfieldsDAO {
 	 *
 	 * @return List<User>
 	 */
-	public List<indexfields> getFields() throws Exception {
+	public Set<indexfields> getFields() throws Exception {
 		
 		Connection con = null;
 
@@ -29,7 +31,8 @@ public class indexfieldsDAO {
 			String sql = "SELECT profession, country FROM crew;";
 
 			// create list
-			List<indexfields> fieldslist = new ArrayList<indexfields>();
+
+			Set<indexfields> fieldslist = new HashSet<indexfields>();
 			
 		try {
 
@@ -40,7 +43,7 @@ public class indexfieldsDAO {
 
 			ResultSet rs = stmt.executeQuery();
 
-			while (rs.next()) {
+			while (rs.next()) {	
 
 				fieldslist.add(new indexfields(rs.getString("profession"), rs.getString("country")));
 
@@ -50,11 +53,8 @@ public class indexfieldsDAO {
 			stmt.close(); //closing PreparedStatement
 			Connect.close(); //closing connection
 			
-			fieldslist = new HashSet<String>(Arrays.asList(fieldslist)).toArray(new String[0]);
-
 			return fieldslist;
-
-
+		
 
 		} catch (Exception e) {
 

@@ -4,6 +4,8 @@
 <%@ page import="Fields.*" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.HashSet" %>
+<%@ page import="java.util.Set" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,28 +31,40 @@
             <p></p>
             <h2 class="text-white" class="container text-center">FIND YOUR CREW</h2>
           </div>
+
+          <%-- Create 2 sets to eliminate dublicates --%>
           <%
           indexfieldsDAO ud = new indexfieldsDAO();
-          List<indexfields> fields = ud.getFields();
+          Set<indexfields> fields = ud.getFields();
+          Set<String> proffield = new HashSet<String>();
+          Set<String> countfield = new HashSet<String>();
+
+          for(indexfields field : fields) {
+            proffield.add(field.getProfession());
+          }
+          for(indexfields field : fields) {
+            countfield.add(field.getCountry());
+          }
+
           %>
           
           <form action="profiles.jsp">
             <div class="row">
               <div class="container col-sm-7"> 
                 <select name="profession" class="form-control form-control-sm text-center">
-                  <label><option value="none">Profession</option></label>
-                   <%  for(indexfields field : fields) { %> 
-                  <option><%=field.getProfession() %></option>
+                  <label><option value="none" selected>Profession</option></label>
+                   <%  for(String prof : proffield) { %> 
+                  <option><%=prof%></option>
                   <% } %>
                 </select>
               </div>
               <p><br></p>
               <div class="container col-sm-7">
                 <select name="country" class="form-control form-control-sm text-center">
-                  <label><option value="none">Country</option></label>
+                  <label><option value="none" selected>Country</option></label>
                   <%
-                  for(indexfields field : fields) { %> 
-                  <option><%=field.getCountry() %></option>
+                  for(String coun : countfield) { %> 
+                  <option><%=coun %></option>
                   <% } %>
                 </select>
                 <p></p>
