@@ -3,10 +3,11 @@
 <%@ page errorPage="error_page.jsp"%>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="Apply.*" %>
 
 <%
-SubscriberDAO sdao = new SubscriberDAO();
-List<Subscriber> subscribers = sdao.getSubscriber();
+ApplicationDAO adao = new ApplicationDAO();
+List<Application> applications = adao.getApplications();
 %>
 
 
@@ -24,7 +25,7 @@ List<Subscriber> subscribers = sdao.getSubscriber();
 
 		<header class="header-back text-white">
 			<div class="container text-center">
-				<h1><b>Manage your subscribers!</b></h1>
+				<h1><b>Manage your applications!</b></h1>
 			</div>
 		</header>
 		
@@ -34,19 +35,35 @@ List<Subscriber> subscribers = sdao.getSubscriber();
 			<div class="row justify-content-center">
 				<table>
 						<tr>
-							<th>#</th>
-							<th>Fullname</th>
-							<th>Email</th>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Surname</th>
+							<th>Profession</th>
+							<th>Availability</th>
+							<th>Age</th>
+							<th>Country</th>
+							<th>Gender</th>
+							<th>Personal Information</th>
+							<th>Education</th>
+							<th>Experience</th>
+							<th>Languages</th>
 						</tr>
 					<%
-						int i = 0;
-						for (Subscriber subscriber : subscribers) {
-							i = i +1;
+						for (Application appl : applications) {
 					%>
 								<tr>
-								<td><%=i %></td>
-								<td><%=subscriber.getFullname() %></td>
-								<td><%=subscriber.getEmail() %></td>
+								<td><%=appl.getID() %></td>
+								<td><%=appl.getName() %></td>
+								<td><%=appl.getSurname() %></td>
+								<td><%=appl.getProfession() %></td>
+								<td><%=appl.getAvailability() %></td>
+								<td><%=appl.getAge() %></td>
+								<td><%=appl.getCountry() %></td>
+								<td><%=appl.getGender() %></td>
+								<td><%=appl.getDescribe() %></td>
+								<td><%=appl.getEducation() %></td>
+								<td><%=appl.getExperience() %></td>
+								<td><%=appl.getLanguages() %></td>
 								</tr>
 					<% } %>
 				</table>
