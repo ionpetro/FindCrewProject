@@ -13,7 +13,7 @@ import java.util.List;
 
 public class SubscriberDAO {
 
-	public Subscriber findSubscriber(String email) throws Exception {
+	public void findSubscriber(String email) throws Exception {
 
 		Connection con = null;
 
@@ -31,22 +31,17 @@ public class SubscriberDAO {
 
 			ResultSet rs = stmt.executeQuery();
 
-			if( rs.next() ) {
+			if(!rs.next()) {
 
 				rs.close();
 				stmt.close();
 
-				throw new Exception("Subscriber already exists! Please try another email address.");
+				return;
 
 			}
-
-			Subscriber subscriber = new Subscriber( rs.getString("fullname"),
-									rs.getString("email"));
-
 			rs.close();
 			stmt.close();
-
-			return subscriber;
+			throw new Exception("Subscriber already exists! Please try another email address.");
 		} catch (Exception e) {
 			throw new Exception( e.getMessage());
 		} finally {
@@ -58,48 +53,77 @@ public class SubscriberDAO {
 
 	} //End of findSubscriber
 
-		public void saveSubscriber(Subscriber subscriber) throws Exception {
+	public void saveSubscriber(Subscriber subscriber) throws Exception {
 
+		Connection con = null;
 
-			Connection con = null;
+		//Define the SQL statement (to be executed)
+		String sql= "INSERT INTO subscribers (fullname, email) "
+	                        + " VALUES (?, ?);";
 
-			//Define the SQL statement (to be executed)
-			String sql= "INSERT INTO subscribers (fullname, email) "
-	                            + " VALUES (?, ?);";
+		DB db = new DB();
 
-			DB db = new DB();
+		try {
+			//open connection and get Connection object
+			con = db.getConnection();
 
+			PreparedStatement stmt = con.prepareStatement( sql );
+			
+			//set values to all parameters
+			stmt.setString(1, subscriber.getFullname());
+			stmt.setString(2, subscriber.getEmail());
+			//execute the SQL statement (INSERT)
+			stmt.executeUpdate();
+
+			//close PreparedStatement to release resources
+			stmt.close();
+
+		} catch (Exception e) {
+			throw new Exception( "Error while saving subscriber to database: " + e.getMessage() );
+		} finally {
 			try {
-				//open connection and get Connection object
-				con = db.getConnection();
-
-				PreparedStatement stmt = con.prepareStatement( sql );
-
-				//set values to all parameters
-				stmt.setString(1, subscriber.getFullname());
-				stmt.setString(2, subscriber.getEmail());
-
-				//execute the SQL statement (INSERT)
-				stmt.executeUpdate();
-
-				//close PreparedStatement to release resources
-				stmt.close();
-
+				db.close(); //closing connection
 			} catch (Exception e) {
 
-				throw new Exception( "Error while saving subscriber to database: " + e.getMessage() );
+			}
+		}
+	}//end of saveSubscriber
 
-			} finally {
+	public List<Subscriber> getSubscriber() throws Exception {
 
-				try {
-					db.close(); //closing connection
-				} catch (Exception e) {
+	Connection con = null;
 
-				}
+	String sql= "SELECT * FROM subscribers;";
 
+	DB db = new DB();
+	List<Subscriber> subscribers =  new ArrayList<Subscriber>();
+
+	try {
+		con = db.getConnection();
+		PreparedStatement stmt = con.prepareStatement(sql);
+		ResultSet rs = stmt.executeQuery();
+
+			while (rs.next()) {
+									
+				Subscriber sbr = new Subscriber( rs.getString("fullname"),
+									rs.getString("email"));
+				
+				subscribers.add(sbr);
+					 			
 			}
 
+ 			rs.close();
+			stmt.close();
+						
+			return subscribers;
+		} catch (Exception e) {
+			throw new Exception( e.getMessage());
+		} finally {
+			try {
+				db.close();
+			} catch (Exception e) {
+			}
+		}
 
-	}
-
+	} //End of getSubscriber
 } //end of class
