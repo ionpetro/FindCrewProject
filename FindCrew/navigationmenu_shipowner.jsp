@@ -18,6 +18,7 @@
 					  <a href="index.jsp#about" class="dropdown-item">About Us</a>
 					  <a href="index.jsp#services" class="dropdown-item">Services</a>
 					  <a href="index.jsp#team" class="dropdown-item">Team</a>
+					  <a href="index.jsp#supporters" class="dropdown-item">Supporters</a>
 					</div>
 				</li>
 				<li class="nav-item">
@@ -43,7 +44,9 @@
 					<a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#"><i><b><%=user.getUsername()%></b></i></a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
 					  <a href="favorites.jsp" class="dropdown-item">My favorites</a>
+					  <a href="myprofile.jsp" class="dropdown-item">My profile</a>
 					</div>
+					
 				</li>
 				<%
 					}

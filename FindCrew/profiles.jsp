@@ -3,36 +3,81 @@
 <%@ page errorPage="error_page.jsp"%>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.HashSet" %>
+<%@ page import="java.util.Set" %>
+<%@ page import="Fields.*" %>
 
 
 <%
+String prof = "null";
+String coun = "null";
+String gend = "null";
+if (request.getParameter("profession") != null){
+	prof = request.getParameter("profession");
+}
+if (request.getParameter("country") != null) {
+	coun = request.getParameter("country");
+}
+if (request.getParameter("gender") != null) {
+	gend = request.getParameter("gender");
+}
 
-String prof = request.getParameter("profession");
-String coun = request.getParameter("country");
-
-//UserLogin user = (UserLogin)session.getAttribute("user-object");
 
 CrewDAO cdao = new CrewDAO();
 
+List<Crew> crews = new ArrayList<Crew>();
+crews = cdao.getAllCrews();
+
+if ((!prof.equals("none")) && (!coun.equals("none"))) {
+	crews = new ArrayList<Crew>();
+	crews = cdao.getCrews(prof, coun);
+}
+
+if (((!prof.equals("none")) && (coun.equals("none"))) || ((!prof.equals("none")) && (coun.equals("null")))) {
+	crews = new ArrayList<Crew>();
+	crews = cdao.getCrewsByProf(prof);
+}
+
+if (((prof.equals("none")) && (!coun.equals("none"))) || ((prof.equals("null")) && (!coun.equals("none")))){
+	crews = new ArrayList<Crew>();
+	crews = cdao.getCrewsByCoun(coun);
+}
+if( prof == "null" && coun == "null") {
+	crews = new ArrayList<Crew>();
+	crews = cdao.getAllCrews();
+}
+if (gend != "null") {
+	crews = new ArrayList<Crew>();
+	crews = cdao.getFilterCrews(prof, coun, gend);
+}
+
+ 
 /*
-if (profession.equals("") & (country.equals("")){
-	List<Crew> crews = cdao.getAllCrew();
-} else {
-	List<Crew> crews = cdao.getCrews(prof, coun);
+if ((!prof.equals(" ")) & (!coun.equals(" ")) & (!gend.equals(" "))) {
+	crews = cdao.getFilterCrews(prof, coun, gend);
 }
 */
-
-List<Crew> crews = cdao.getCrews(prof, coun);
-
 
 // Instruct the browser not to cache this page
 response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 response.setHeader("Pragma", "no-cache");
 response.setDateHeader("Expires", 0);
-
-
-
 %>
+
+<%
+indexfieldsDAO ud = new indexfieldsDAO();
+Set<indexfields> fields = ud.getFields();
+Set<String> proffield = new HashSet<String>();
+Set<String> countfield = new HashSet<String>();
+
+for(indexfields field : fields) {
+    proffield.add(field.getProfession());
+}
+for(indexfields field : fields) {
+    countfield.add(field.getCountry());
+}
+%>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,63 +85,84 @@ response.setDateHeader("Expires", 0);
 		<%@ include file="header.jsp"%>
 		<link href="css/profiles.css" rel="stylesheet">
 	</head>
-
+	
 	<body>
 		
 	<%@ include file="navigationmenu_shipowner.jsp"%>
 
 		<!-- Page Content -->
 		<div class="container">
-		
-			<!-- Page Heading -->
-			<h2 class="text-center hidden-xs hidden-sm hidden-md">Find your crew</h2>
-			<h6 class="text-center" style="color:#387B7A">All profiles have been approved by us</h6>
-			
+			<div class="kap">
+				<!-- Page Heading -->
+				<h2 class="text-center hidden-xs hidden-sm hidden-md">Find your crew</h2>
+				<h6 class="text-center">All profiles have been approved by us</h6>
+			</div>
 			<hr>
+			
+			<% if(request.getAttribute("error") != null) { %>		
+				<div class="alert alert-danger text-center" role="alert"><%=(String)request.getAttribute("error") %></div>
+			<% } %>
+			<% if(request.getAttribute("success") != null) { %>		
+				<div class="alert alert-success text-center" role="alert"><%=(String)request.getAttribute("success") %></div>
+			<% } %>
 			<div class="row">
 				<div class="col-lg-3 col-xl-3">
 					<div class="card my-4">
 						<h5 class="card-header" align="center">Search Filters</h5>
 						<div class="card-body">
-							<form>
+							<form method="post" action="profiles.jsp">
 								<input type="hidden" name="filters">
 								<div class="form-group">
 									<label for=""><b>Profession:</b></label>
+									<% for(String profession : proffield) { %>
+									<% if (prof.equals(profession)){ %>
 									<br>
-									<input id="profession0" name="profession" type="checkbox" value="Captain"> Captain
-									<p>
-									<input id="profession1" name="profession" type="checkbox" value="Sailor"> Sailor
+									<input id="profession" name="profession" type="radio" value="<%=profession%>" checked="checked"> <%=profession%>
+									<% } else {%>
 									<br>
-									<input id="profession2" name="profession" type="checkbox" value="Cleaner"> Cleaner
-									<br>
-									<input id="profession3" name="profession" type="checkbox" value="Cooker"> Cooker
-									</p>
+									<input id="profession" name="profession" type="radio" value="<%=profession%>"> <%=profession%>
+									<% } %>
+									<% } %>
 								</div>
 								
 								<div class="form-group">
-									<label for=""><b>Country:</b></label>
+									<label for="" value="none"><b>Country:</b></label>
+									<% for(String country : countfield) { %>
+									<% if (coun.equals(country)){ %>
 									<br>
-									<input id="country0" name="country" type="checkbox" value="greece"> Greece
-									<p>
-									<input id="country1" name="country" type="checkbox" value="germany"> Germany
+									<input id="country" name="country" type="radio" value="<%=country %>" checked="checked"> <%=country %>
+									<% } else {%>
 									<br>
-									<input id="country2" name="country" type="checkbox" value="cyprus"> Cyprus
-									<br>
-									<input id="country3" name="country" type="checkbox" value="spain"> Spain
-									</p>
+									<input id="country" name="country" type="radio" value="<%=country %>"> <%=country %>
+									<% } %>
+									<% } %>
 								</div>
 								
 								<div class="form-group">
 									<label for=""><b>Gender:</b></label>
 									<br>
-									<input id="gender0" name="gender" type="checkbox" value="female"> Female
-									<p>
-									<input id="gender1" name="gender" type="checkbox" value="male"> Male
-									</p>
+									<%if (gend.equals("Female")){ %>
+									<input id="gender" name="gender" type="radio" value="Female" checked="checked"> Female
+									<% } else {%>
+
+									<input id="gender" name="gender" type="radio" value="Female"> Female
+
+									<% } %>
+
+									<br>
+
+									<% if (gend.equals("Male")){ %>
+
+									<input id="gender" name="gender" type="radio" value="Male" checked="checked"> Male
+
+									<%} else {%>
+
+									<input id="gender" name="gender" type="radio" value="Male"> Male
+
+									<% } %>
 								</div>
-								
 								<div class="text-right">
-									<button type="button" class="btn btn-primary btn-md">Search</button>
+									<button type="submit" class="btn btn-primary btn-md">Search</button>
 									<button type="reset" value="Reset" class="btn btn-primary btn-md">Reset</button>
 								</div>
 							</form>
@@ -164,15 +230,16 @@ response.setDateHeader("Expires", 0);
 						<h5 class="card-header" align="center">Join our community!</h5>
 						<div class="card-body">
 							<p align="center">Do you want to hear more from us? <br> Subscribe to our mailing list to receive our updates!</p>
-							<form>
+							<form method="post" action="SubscribeController.jsp">
 								<input type="hidden" name="filters">
-								<div class="form-group">
-									<input type="text" name="subname" placeholder="Your full name" required>
-									<br>
+								<div class="form-group" align="center">
+									<input type="text" name="subname" placeholder="Your fullname" required>
+								</div>
+								<div class="form-group" align="center">
 									<input type="email" name="subemail" placeholder="Your email" required>
 								</div>
 								<div class="text-center">
-									<button type="button" class="btn btn-primary btn-md">Subscribe</button>
+									<button type="submit" class="btn btn-primary btn-md">Subscribe</button>
 								</div>
 							</form>
 						</div>
