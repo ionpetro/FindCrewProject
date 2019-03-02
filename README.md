@@ -1,4 +1,4 @@
-![alt text](url /images/logo.png)
+![alt text](/images/logo.png)
 
 # FindCrew
 
