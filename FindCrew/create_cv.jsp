@@ -21,6 +21,7 @@
  </head>
 
  <body>
+<<<<<<< HEAD
 	    <!-- Here should be an "if" in order to see if the user has loged in or not -->
 	    <%@ include file="navigationmenu_shipowner.jsp"%>
 
@@ -41,6 +42,12 @@
 	        <% } else { %>
 	         
 	    <form method="post" action="applicationController.jsp">
+=======
+         <!-- Here should be an "if" in order to see if the user has loged in or not -->
+	    <%@ include file="navigationmenu_shipowner.jsp"%>
+
+	    <form>
+>>>>>>> 6a0bf61b839b19f433dfc2450cb5dd17ef7da7a2
 			<div class="container">
 				<div class="horizontal-center">
 	    		   <div class=" col-lg-12 col-md-12">	
@@ -141,6 +148,7 @@
 			</div>
 		</form>
 
+<<<<<<< HEAD
 		<% } %>
 		<% if (session.getAttribute("user-object") != null) { %>
 		<!-- Footer -->
@@ -162,6 +170,9 @@
 	    <script src="vendor/jquery/jquery.min.js"></script>
 	    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+=======
+	    <%@ include file = "footer.jsp" %>
+>>>>>>> 6a0bf61b839b19f433dfc2450cb5dd17ef7da7a2
  </body>
 
 </html>

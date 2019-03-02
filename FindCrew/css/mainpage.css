@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*!
  * Start Bootstrap - Scrolling Nav (https://startbootstrap.com/template-overviews/scrolling-nav)
  * Copyright 2013-2017 Start Bootstrap
@@ -29,3 +30,32 @@ body, html {
 }
 
 
+=======
+/*!
+ * Start Bootstrap - Scrolling Nav (https://startbootstrap.com/template-overviews/scrolling-nav)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
+ */
+
+header {
+  padding: 300px 0 100px;
+}
+
+@media (min-width: 992px) {
+  header {
+    padding: 300px 0 100px;
+  }
+}
+
+section {
+  padding: 50px 0;
+}
+
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+
+
+>>>>>>> 6a0bf61b839b19f433dfc2450cb5dd17ef7da7a2

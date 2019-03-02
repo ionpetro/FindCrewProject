@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page errorPage="error_page.jsp"%>
 
-<%
-session.invalidate();
-%>
--
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -12,11 +9,11 @@ session.invalidate();
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 	
 		<!-- automatically will redirect to index_ex2_8160107.jsp after 2 seconds -->
-		<meta http-equiv="refresh" content="2;url=index.jsp" />
+		<meta http-equiv="refresh" content="3;url=index.jsp" />
 
-	    <link href='css/signupcontroller.css' rel='stylesheet'>
+	    <link href="css/login.css" rel="stylesheet">
 
-
+	    <link href="css/signin.css" rel="stylesheet">
 	
 	</head>
 	<body>
@@ -55,27 +52,12 @@ session.invalidate();
 
 	    <p><br></p>
 	    <p><br></p>
+	    <p><br></p>
 		<div class="container theme-showcase" role="main">
 
-			<div class="alert alert-success text-center" role="alert">You have successfully logged out!</div>		
+			<div class="alert alert-success text-center" role="alert"><h3>Υour message was sent successfully! We will contact you soon..</h3></div>		
 
 		</div>
 		<!-- /container -->
-<<<<<<< HEAD
-
-		<footer class="py-3 bg-dark">
-				<div class="text-center text-white">
-					<h3><b>Contact us</b></h3>
-					Athens University of Economics & Business <br>
-					28th Oktovriou 76, Athens 104 34 <br>
-					P: 6979876987
-				</div>
-				<br>
-				<div class="container">
-					<p class="m-0 text-center text-white">Copyright &copy; FindCrew 2018</p>
-				</div>
-		</footer>
-=======
->>>>>>> 6a0bf61b839b19f433dfc2450cb5dd17ef7da7a2
 	</body>
 </html>

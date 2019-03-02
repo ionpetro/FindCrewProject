@@ -11,7 +11,7 @@ public class ContactRequestDAO {
 	public List<ContactRequest> getRequests() throws Exception {
 
 		Connection con = null;
-		String sql = "SELECT * FROM contactRequests; ";
+		String sql = "SELECT * FROM contact_request; ";
 		DB db = new DB();
 		List<ContactRequest> c = new ArrayList<ContactRequest>();
 		try {
@@ -24,8 +24,8 @@ public class ContactRequestDAO {
 					ResultSet rs = stmt.executeQuery();
 
 					while (rs.next()) {
-						c.add( new ContactRequest(rs.getString("username"), rs.getString("start"),
-												   rs.getString("end"),rs.getString("departure"),
+						c.add( new ContactRequest(rs.getInt("idcrew"), rs.getInt("idshipowner"), rs.getString("starting_period"),
+												   rs.getString("ending_period"),rs.getString("departure_point"),
 												   rs.getString("description")) );
 					}
 
@@ -64,8 +64,7 @@ public class ContactRequestDAO {
 	public void sendRequest(ContactRequest cd) throws Exception {
 
 		Connection con = null;
-		String sql = "INSERT INTO (username, start, end, departure, description) "
-								+ " VALUES (?, ?, ?, ?, ?);";
+		String sql = "INSERT INTO contact_request(idcontact_request,idcrew,idshipowner, starting_period, ending_period, departure_point, description)"+"VALUES (?,?,?,?,?,?,?);";
 		DB db = new DB();
 		try {
 					//open connection and get Connection object
@@ -74,12 +73,14 @@ public class ContactRequestDAO {
 
 
 
-					 //set values to all parameters
-					stmt.setString(1, cd.getUsername());
-					stmt.setString(2, cd.getStart());
-					stmt.setString(3, cd.getEnd());
-					stmt.setString(4, cd.getDeparture());
-					stmt.setString(5, cd.getDescription());
+					//set values to all parameters
+                    stmt.setInt(1, cd.getIdcontact_request());
+					stmt.setInt(2, cd.getCrew_id());
+					stmt.setInt(3, cd.getShipowner_id());
+					stmt.setString(4, cd.getStart());
+					stmt.setString(5, cd.getEnd());
+					stmt.setString(6, cd.getDeparture());
+					stmt.setString(7, cd.getDescription());
 
 					//execute the SQL statement (INSERT)
 					stmt.executeUpdate();
@@ -106,7 +107,7 @@ public class ContactRequestDAO {
 
 	      }
 
-
+          return;
 
 		}
 

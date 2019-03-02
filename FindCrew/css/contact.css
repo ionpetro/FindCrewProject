@@ -7,6 +7,11 @@
 body {
   padding-top: 60px;
   margin-top: 15px;
+  background-image: url("../images/back_contact.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 @media (min-width: 992px) {
@@ -17,14 +22,15 @@ body {
 
 
 
-
 .card {
-        margin: 0 auto; /* Added */
+        margin:auto;
         float: none; /* Added */
-        margin-bottom: 10px; /* Added */
+        margin-bottom: 20px; /* Added */
         background-color: #F8FAFA;
+        
 
 }
+
 
 
 .btn-primary {
@@ -41,3 +47,7 @@ body {
 
 
 .grab {cursor: -webkit-grab; cursor: grab;}
+
+footer {
+  position: responsive;
+}

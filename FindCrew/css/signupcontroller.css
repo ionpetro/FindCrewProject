@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 body{ min-height:100%; padding:0; margin:0; position:relative; }
 
@@ -17,4 +18,25 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+=======
+html{ height:100%; }
+body{ min-height:100%; padding:0; margin:0; position:relative; }
+header{ height:50px; background:lightcyan; }
+
+/* Trick: */
+body {
+  position: relative;
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 50px; /* Set same as footer's height */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+>>>>>>> 6a0bf61b839b19f433dfc2450cb5dd17ef7da7a2
 }

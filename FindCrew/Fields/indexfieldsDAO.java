@@ -3,9 +3,12 @@ package Fields;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+<<<<<<< HEAD
 import java.util.*;
 import java.util.HashSet;
 import java.util.Set;
+=======
+>>>>>>> 6a0bf61b839b19f433dfc2450cb5dd17ef7da7a2
 
 /**
  * UserDAO provides all the necessary methods related to user's.
@@ -52,7 +55,11 @@ public class indexfieldsDAO {
 			rs.close(); //closing ResultSet
 			stmt.close(); //closing PreparedStatement
 			Connect.close(); //closing connection
+<<<<<<< HEAD
 			
+=======
+
+>>>>>>> 6a0bf61b839b19f433dfc2450cb5dd17ef7da7a2
 			return fieldslist;
 		
 

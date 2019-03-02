@@ -2,28 +2,60 @@ package ContactRequestJava;
 
 public class ContactRequest {
 
-	private String username;
+	private int crew_id;
+	private int shipowner_id;
 	private String start;
 	private String end;
 	private String departure;
 	private String description;
+	private int idcontact_request;
 
-	public ContactRequest(String username, String start, String end, String departure, String description) {
+	public ContactRequest(int crew_id,int shipowner_id, String start, String end, String departure, String description) {
 
-			this.username = username;
+			this.crew_id = crew_id;
+			this.shipowner_id = shipowner_id;
 			this.start = start;
 			this.end = end;
 			this.departure = departure;
 			this.description = description;
 	}
 
-   public String getUsername() {
-		return username;
+	public ContactRequest(int idcontact_request, int crew_id,int shipowner_id, String start, String end, String departure, String description) {
+
+	            this.idcontact_request = idcontact_request;
+				this.crew_id = crew_id;
+				this.shipowner_id = shipowner_id;
+				this.start = start;
+				this.end = end;
+				this.departure = departure;
+				this.description = description;
+	}
+
+	 public int getIdcontact_request() {
+	   		return idcontact_request;
+	   	}
+
+
+    public void setIdcontact_request(int idcontact_request) {
+	   	this.idcontact_request = idcontact_request;
+   	}
+
+   public int getCrew_id() {
+   		return crew_id;
+   	}
+
+
+	  public void setCrew_id(int crew_id) {
+		this.crew_id = crew_id;
+   	}
+
+   public int getShipowner_id() {
+		return shipowner_id;
 	}
 
 
-   public void setUsername(String username) {
-		this.username = username;
+   public void setShipowner_id(int shipowner_id) {
+		this.shipowner_id = shipowner_id;
 	}
 
 
@@ -67,7 +99,7 @@ public class ContactRequest {
 
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", start=" + start  + ", end=" + end + ", departure=" + departure +", description="+description + "]";
+		return "Contact Request [Crew_id: "+ crew_id +"Shipowner_id=" + shipowner_id + ", start=" + start  + ", end=" + end + ", departure=" + departure +", description="+description + "]";
 	}
 
 

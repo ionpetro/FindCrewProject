@@ -6,50 +6,36 @@
 <html lang="en">
 
   <head>
-
-    <%@ include file= "header.jsp" %>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>FindCrew</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/admin.css" rel="stylesheet">
-
-
-
-
-    
-
+    <link href="css/admin_button.css" rel="stylesheet">
   </head>
 
-  <body id="page-top">
+<body id="page-top">
 
-    <%@ include file="navbar_admin_main.jsp"%>
+    <%@ include file="navigationmenu_shipowner.jsp"%>
 
     <div class="container">
-	  <h2 class="text-center hidden-xs hidden-sm hidden-md" style="color: #585858">Time to manage FindCrew!</h2>
+      <p></p>
+	  <h2 class="text-center hidden-xs hidden-sm hidden-md" style="color:#598881"><b>Time to manage FindCrew!</b></h2>
 
 	</div>	
-
+    <p></p>
     <div class="container col-md-2">
 
- 	<p><button type="button" class="btn btn-primary btn-lg btn-block">General Contacts</button></p>
- 	<p><button type="button" class="btn btn-primary btn-lg btn-block">Contact Requests</button></p>
- 	<p><button type="button" class="btn btn-primary btn-lg btn-block">Cvs</button></p>
- 	<p><button type="button" class="btn btn-primary btn-lg btn-block">Subscriptions</button></p>
+ 	<p><button class="button">General Contacts</button></p>
+ 	<p><a href="admin_contact_request.jsp"><button class="button">Contact Requests</button></a></p>
+ 	<p><button class="button">Cvs</button></p>
+ 	<p><button class="button">Subscriptions</button></p>
        
-     </div> 
-  
-   
- 	
-   
+     </div>
+	
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom JavaScript for this theme -->
-    <script src="js/scrolling-nav.js"></script>
 
   </body>
 
