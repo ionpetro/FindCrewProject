@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900,900italic);
 
 body {
-    font-family: 'Source Sans Pro'
+    font-family: 'Source Sans Pro';
     line-height: 1.5;
     color: #323232;
     font-size: 15px;
@@ -9,6 +9,7 @@ body {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
+
 }
 
 .text-center {
@@ -156,6 +157,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
 }
 
 

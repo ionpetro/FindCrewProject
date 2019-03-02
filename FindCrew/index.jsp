@@ -11,13 +11,20 @@
 <html lang="en">
 
   <head>
-	<%@ include file="header.jsp"%>
+
+	  <%@ include file="header.jsp"%>
 
     <!-- Custom styles for this template -->
     <link href="css/mainpage.css" rel="stylesheet">
 
     <!-- Custom style for main html -->
     <link href="css/main_css.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="css/carousel.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
   </head>
 
   <body id="page-top">
@@ -92,7 +99,7 @@
     </header>
 
     
-    <section id="about">
+    <section id="about" class="bg-light">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -106,7 +113,7 @@
       </div>
     </section>
 
-    <section id="services" class="bg-light">
+    <section id="services">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
@@ -114,7 +121,7 @@
       </div>
           <div class="col-lg-10 mx-auto">
             
-            <section class="features-icons bg-light text-center">
+            <section class="features-icons text-center">
       <div class="container">
         <div class="row">
           <div class="col-lg-4">
@@ -123,7 +130,7 @@
                 <i class="material-icons m-auto icons-look" style="font-size:80px;color:#387B7A;">sentiment_very_satisfied</i>
               </div>
               <h3>Easy to Use</h3>
-              <p class="lead mb-0">Search, compire the profiles, find the one that best suits your needs!</p>
+              <p class="lead mb-0">Search, compare the profiles, find the one that best suits your needs!</p>
             </div>
           </div>
           <div class="col-lg-4">
@@ -154,7 +161,7 @@
       
     </section>
 
-    <section id="team">
+    <section id="team" class="bg-light">
       <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto">
@@ -241,6 +248,30 @@
       
     </section>
 
+    <section id="supporters">
+      <div class="row">
+        <div class="container">
+          <div class="col-lg-12 mx-auto">
+      <h2 class="c">Supporters</h2>
+                &nbsp;
+                <p></p>
+          <section class="customer-logos slider">
+            <div class="slide"><img src="images/image1.png"></div>
+            <div class="slide"><img src="images/image2.png"></div>
+            <div class="slide"><img src="images/image3.png"></div>
+            <div class="slide"><img src="images/image4.png"></div>
+            <div class="slide"><img src="images/image5.png"></div>
+            <div class="slide"><img src="images/image6.png"></div>
+            <div class="slide"><img src="images/image7.png"></div>
+            <div class="slide"><img src="images/image8.png"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+      <script type="text/javascript" src="js/carousel.js" ></script>
+      </section>
+
     <section id="contact" class="bg-light">
       <div class="container">
         <div class="row">
@@ -284,5 +315,7 @@
 
     
     <%@ include file = "footer.jsp" %>
+
+
   </body>
 </html>

@@ -16,6 +16,7 @@ public class signupController extends HttpServlet {
 		String confirm = request.getParameter("confirm");
 		String email = request.getParameter("email");
 		String checkbox = request.getParameter("checkbox");
+		String shipownerconfirmation = request.getParameter("shipownerconfirmation");
 		
 		
 		/* General try */
@@ -88,6 +89,7 @@ public class signupController extends HttpServlet {
 			
 			UserLoginDAO user = new UserLoginDAO();
 			UserLogin usr = new UserLogin(username, password, email, name, surname);
+		
 			
 			
 			/* check if already exists */
@@ -103,6 +105,9 @@ public class signupController extends HttpServlet {
 			else if ((name.length() >= 3) && (surname.length() >= 3) && (username.length() >= 5) && (password.length() >=5) && (password.equals(confirm)) && (trueusr == null)) {
 				
 				user.registerUser(usr);
+				if (shipownerconfirmation != null) {
+					user.updateShipowner();
+				}
 				
 				out.println("<h1>Registration done! Enjoy the ultimate FINDCREW experience!!!</h1>");
 				out.println("<div class='alert alert-success' role='alert'>");

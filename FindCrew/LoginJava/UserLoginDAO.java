@@ -25,7 +25,7 @@ public class UserLoginDAO {
 		DB Connect = new DB();
 
 			// Define the SQL statement (to be executed)
-			String sql = "SELECT * FROM shipowner";
+			String sql = "SELECT * FROM user;";
 
 			// create list
 			List<UserLogin> userlist = new ArrayList<UserLogin>();
@@ -41,7 +41,7 @@ public class UserLoginDAO {
 
 			while (rs.next()) {
 
-				userlist.add(new UserLogin(rs.getInt("idshipowner"), rs.getString("username"), rs.getString("password"), rs.getString("name"), rs.getString("surname"), rs.getString("email")) );
+				userlist.add(new UserLogin(rs.getInt("userid"), rs.getString("username"), rs.getString("password"), rs.getString("name"), rs.getString("surname"), rs.getString("email")) );
 
 			} //End of while
 
@@ -81,7 +81,7 @@ public class UserLoginDAO {
 		DB Connect = new DB();
 
 		// Define the SQL statement (to be executed)
-		String sql1 = "SELECT * FROM shipowner WHERE username=?;";
+		String sql1 = "SELECT * FROM user WHERE username=?;";
 
 		try { 
 			//open connection and get Connection object	
@@ -94,7 +94,7 @@ public class UserLoginDAO {
 
 			while (rs.next()) {
 
-			UserLogin user = new UserLogin(rs.getInt("idshipowner"), rs.getString("username"), rs.getString("password"), rs.getString("name"), rs.getString("surname"), rs.getString("email"));
+			UserLogin user = new UserLogin(rs.getInt("userid"), rs.getString("username"), rs.getString("password"), rs.getString("name"), rs.getString("surname"), rs.getString("email"));
 			return user;	
 			} 
 			rs.close();
@@ -131,7 +131,7 @@ public class UserLoginDAO {
 		
 
 		// Define the SQL statement (to be executed)
-		String sql2 = "SELECT * FROM shipowner WHERE username =? AND password=?;";
+		String sql2 = "SELECT * FROM user WHERE username =? AND password=?;";
 		
 		DB connect = new DB();
 
@@ -183,7 +183,7 @@ public class UserLoginDAO {
 		DB Connect = new DB();
 		
 		//Define SQL Statement (to be executed)
-		String sql3 = "INSERT INTO shipowner(idshipowner, name, surname, username, password, email)" + "VALUES (?, ?, ?, ?, ?, ?);";
+		String sql3 = "INSERT INTO user(userid, name, surname, username, password, email)" + "VALUES (?, ?, ?, ?, ?, ?);";
 		
 		try {
 			
@@ -192,14 +192,15 @@ public class UserLoginDAO {
 			PreparedStatement stmt = con.prepareStatement(sql3);
 
 			//setvalues
-			stmt.setInt(1, user.getShipownerid());
+			stmt.setInt(1, user.getID());
 			stmt.setString(2, user.getName());
 			stmt.setString(3, user.getSurname());
 			stmt.setString(4, user.getUsername());
 			stmt.setString(5, user.getPassword());
 			stmt.setString(6, user.getEmail());
-
+			
 			stmt.executeUpdate();
+			
 
 			stmt.close();
 			Connect.close();
@@ -220,6 +221,64 @@ public class UserLoginDAO {
 		} // End of Try
 			
 		
+	} //End of registerUser
+	
+	public void updateShipowner() throws Exception {
+			
+			Connection con = null;
+			
+			DB Connect = new DB();
+			
+			//Define SQL Statement (to be executed)
+			String sql="SELECT userid FROM user ORDER BY userid DESC LIMIT 1;";
+			String sql1="SELECT idshipowner FROM shipowner ORDER BY idshipowner DESC LIMIT 1;";
+			String sql2= "INSERT INTO shipowner(idshipowner, userid)" + "VALUES (?, ?);";
+			
+			try {
+				
+				con = Connect.getConnection();
+				
+					
+				PreparedStatement stmt = con.prepareStatement(sql);
+				PreparedStatement stmt1 = con.prepareStatement(sql1);
+				ResultSet rs = stmt.executeQuery();
+				ResultSet rs1 = stmt1.executeQuery();
+
+				PreparedStatement stmt2 = con.prepareStatement(sql2);
+				rs.next();
+				rs1.next();
+				int userid = rs.getInt("userid");
+				int shipid = rs1.getInt("idshipowner")+1;
+	
+				//setvalues				
+				stmt2.setInt(1, shipid);
+				stmt2.setInt(2, userid);
+	
+				stmt2.executeUpdate();
+	
+				stmt.close();
+				stmt1.close();
+				stmt2.close();
+				rs.close();
+				rs1.close();
+				Connect.close();
+				
+			} catch (Exception e) {
+				throw new Exception("MySQL Driver error: " + e.getMessage());
+				
+			} finally {
+				
+				try {
+					
+					Connect.close();
+					
+				} catch (Exception e) {
+					
+				}
+							
+			} // End of Try
+				
+			
 	} //End of registerUser
 	
 	

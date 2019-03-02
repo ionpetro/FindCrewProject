@@ -7,7 +7,8 @@ public class UserLogin {
 	private String email;
 	private String name;
 	private String surname;
-	private int idshipowner;
+	private int id;
+	private int id_ship;
 	
 		
 	/**
@@ -28,30 +29,33 @@ public class UserLogin {
 		this.surname = surname;	
 		
 	}
-	public UserLogin(int idshipowner, String username, String password, String email, String name, String surname) {
+	public UserLogin(int id, String username, String password, String email, String name, String surname) {
 		
 		this.username = username;
 		this.password = password;
 		this.email = email;
 		this.name = name;
 		this.surname = surname;
-		this.idshipowner = idshipowner;
-		
+		this.id = id;
 		
 	}
+		
+
 	/* Getters & Setters */
 	/**
 	 * @return the username
 	 */
-	public int getShipownerid() {
-		return idshipowner;
+	 
+	
+	public int getID() {
+		return id;
 	}
 
 	/**
 	 * @param username the username to set
 	 */
-	public void setShipownerid(int idshipowner) {
-		this.idshipowner = idshipowner;
+	public void setID(int id) {
+		this.id = id;
 	}
 	
 	/**
